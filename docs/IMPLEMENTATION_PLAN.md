@@ -16,6 +16,8 @@ Implement the smallest useful CLI and persistent task ledger: plans, tasks, lab 
 
 Start with a fake execution adapter and synthetic repositories. No live model calls or external mutations are necessary to establish core behavior.
 
+The bounded brief also proposes an early real Claude Code qualification using at most two fixed-input, no-tools runs through the operator's authorized subscription. This checks integration assumptions early while preserving deterministic core tests. It needs the brief's explicit live-run budget approval; it does not enable the full Phase 2 adapter or put subscription credentials in CI.
+
 Exit criteria:
 
 - A task cannot execute without an approved matching plan.

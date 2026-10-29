@@ -396,12 +396,39 @@
     "Qualify project-private CPython 3.15.2 and reproducible PyYAML wheel build with pinned build inputs; no silent Python 3.12 fallback.",
     "Pin and review actual native compiler/headers and interpreter distribution inputs before any source build; stop on required OS/privileged changes.",
     "Qualify newest hosted runner profile and update workflow/validator assumptions together without weakening trust checks.",
-    "Commit one full lockfile; prove multi-document graph visibility and exact version parity before any passing CI/runtime claim."
+    "Commit one full lockfile; prove multi-document graph visibility and exact version parity before any passing CI/runtime claim.",
+    "Qualify the bounded latest-pinned Claude CLI trial using authorized subscription authentication and controlled discovery; record output/model/cancellation without enabling real worker orchestration."
   ],
   "codeql_bundle": {
     "version": "2.27.3",
     "url": "https://github.com/github/codeql-action/releases/download/codeql-bundle-v2.27.3/codeql-bundle-linux64.tar.zst",
     "sha256": "5e7607e1b721728955e31f5402d460ad227cbd2ffed0d4cc610116755796150e",
     "source": "https://github.com/github/codeql-action/releases/tag/codeql-bundle-v2.27.3"
+  },
+  "early_claude_probe": {
+    "package": "@anthropic-ai/claude-code",
+    "version": "2.1.312",
+    "source": "https://registry.npmjs.org/@anthropic-ai/claude-code/2.1.312",
+    "tarball": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.312.tgz",
+    "integrity": "sha512-/gx8byG8VOm4YoNuT5tal/Ov5Z5oydJzZkmHCJcBFLbNGGpyYDbKA/CNdB+iIKwcLQC8pVwBoj6Dt7H3L2J5bw==",
+    "declared_license": "SEE LICENSE IN README.md",
+    "observed_existing_installation": "2.1.302",
+    "status": "latest metadata checked; project-private setup and bounded live qualification require milestone approval",
+    "limits": {
+      "runs": 2,
+      "simultaneous_runs": 1,
+      "agentic_turns_per_run": 3,
+      "wall_seconds_per_run": 180,
+      "model_accessible_tools": 0,
+      "delegation": 0
+    },
+    "authentication": "existing authorized operator subscription; no copied credentials, API billing, paid extra usage or change to existing sessions/settings",
+    "model": "resolve and record an eligible exact model ID before invocation; no silent fallback",
+    "advisory_review": {
+      "service": "https://api.osv.dev/v1/query",
+      "date": "2026-10-30",
+      "returned_vulnerability_records": 0,
+      "scope": "this exact CLI npm version only; not source/binary safety or full dependency qualification"
+    }
   }
 }

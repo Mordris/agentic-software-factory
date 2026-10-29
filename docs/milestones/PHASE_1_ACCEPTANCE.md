@@ -26,6 +26,7 @@ Status: required future checks for [the Phase 1 core brief](PHASE_1_CORE.md), 30
 | P1-18 — Operator and read-only paths | Run built ESM CLI in a real subprocess; submit invalid commands, unsupported external actions, replay/status requests and stale command versions. | Correct JSON output/exit statuses; read-only paths cannot dispatch. No implicit network/model/plugin execution, lifecycle daemon or external publisher exists. Child processes use the exact pinned runtime. |
 | P1-19 — CI failure propagation | Enumerate all result combinations for the mandatory jobs, including missing/skipped/canceled jobs; force one accepted invariant to fail. | Aggregate gate passes only with every required success. The deliberate invariant violation fails qualification. Types/build/format/dependency checks cannot silently pass through placeholders or unavailable tools. |
 | P1-20 — Complete restart demonstration | Execute the two-mission scenario below with real persistence and process restart. | Evidence index maps every requirement to current inputs/results. A ends at `awaiting_action_approval`; B ends `canceled`; neither starts an external action. Replay reproduces both final states. |
+| P1-21 — Early real Claude qualification | Under the brief's live-run approval/budget, validate one fixed-input, no-tools Research result using the latest pinned project-private Claude CLI; exercise owned-process cancellation in the first or one additional run. | Existing sessions/settings remain untouched. Subscription authentication and exact observed model/runtime are recorded without credentials; output is independently checked against fixture facts. Bounded termination and event coverage/gaps are explicit. No paid fallback, CI credential, model-accessible tool, or live agent orchestration is introduced. Unavailable capabilities block qualification rather than being labeled passed. |
 
 ## Two-mission demonstration
 
@@ -50,6 +51,6 @@ Coverage reports explain unexercised critical paths. All authority, reservation,
 
 ## Completion boundaries
 
-Local completion requires P1-01 through P1-20 with reproducible evidence and an accurate limitations report. In particular, a latest-version compatibility blocker is not a passing version policy, and a scanner that sees zero packages is not a clean dependency review.
+Local completion requires P1-01 through P1-21 with reproducible evidence and an accurate limitations report. P1-21 is a manual local qualification, outside credential-free hosted CI, and is valid only for its recorded probe/runtime/model/settings inputs. In particular, a latest-version compatibility blocker is not a passing version policy, and a scanner that sees zero packages is not a clean dependency review.
 
 Hosted CI success, hosted image compatibility, and any new required-check/ruleset configuration remain unverified until the exact source is separately approved for publication and the resulting runs/settings are read back. Phase 1 completion does not qualify remote transport, browser behavior, live models, real process isolation, multi-user authority, or real OSS delivery.

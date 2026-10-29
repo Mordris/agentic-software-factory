@@ -10,11 +10,14 @@ Mission A exercises Research, Production, failed independent fixture verificatio
 
 The [acceptance matrix](PHASE_1_ACCEPTANCE.md) defines the required observations, failure controls, and evidence. A green demonstration alone does not replace the boundary and recovery tests.
 
+Add an early, separately bounded real Claude Code qualification to reduce adapter risk before Phase 2. Core failure tests remain deterministic; the live trial checks the actual selected runtime, subscription authentication, observed model, structured event/result handling, and owned-process cancellation. The live trial is proposed here for approval, not already executed.
+
 ## Scope and authority
 
 | Included after milestone approval | Deferred to a later milestone |
 | --- | --- |
-| Local TypeScript implementation, project-private tool/dependency setup, synthetic fixture repositories, bounded foreground checks | Live Claude/model calls, subscription qualification, agent workers, real OSS targets |
+| Local TypeScript implementation, project-private tool/dependency setup, synthetic fixture repositories, bounded foreground checks | Full live agent orchestration, real OSS targets, API billing or subscription changes |
+| At most two bounded real Claude Code qualification runs using fixed supplied input and no model-accessible tools | Model-controlled filesystem/shell/network tools, nested agents, plugin/skill execution, live production work |
 | CLI, schemas, SQLite store/migrations, scheduling, evidence references, event/outbox replay | Web application, graph, HTTP/SSE servers, SSH transport, remote authentication |
 | Eight canonical lab contracts and a shared communication contract | Native Claude plugin packaging, runtime skills, experimental Agent Teams |
 | Local CI changes, source and license/advisory review, local commits and exact publication previews | Pushes, PRs, external messages, deployment, releases, repository-setting changes |
@@ -56,6 +59,18 @@ Migrate the existing Python 3.12 foundation profile to the exact selected Python
 Review the newest available explicit hosted runner image (`ubuntu-26.04` at research time), native compiler identity, platform libraries, and Python distribution availability. Qualify it before replacing the existing `ubuntu-24.04` workflow/validator contract. Local and CI must share the selected project versions; different host OS/compiler observations remain visible. Do not claim a hermetic build or upgrade the operator's OS.
 
 These are entry gates, not assurances that custom compilation or dependency compatibility already works. Stop on an unavailable latest release, missing provenance, incompatible schema/compiler APIs, failed advisory review, or required resource enforcement that cannot be established. Refresh pins and show any material change to scope, resources, or technology before proceeding beyond it.
+
+### Early real Claude Code qualification
+
+Use the operator's existing authorized Claude Code subscription. Read-only checks on 30 October observed installed CLI 2.1.302; official npm metadata reported latest stable 2.1.312. Refresh before setup and pin the selected latest release in project-private tooling. Do not update the existing installation, change its settings/login, attach to or stop existing sessions, copy OAuth credentials, or switch to an API key/provider/paid extra usage path.
+
+First prepare the exact argv, controlled session settings, prompt/input digest, JSON output schema, model ID, process ownership, and cancellation harness. Review effective hooks, plugins, MCP, memory, background-task and settings discovery before any model request. The no-tools probe must not start inherited executables/services. If effective behavior cannot be established without changing the operator's environment, stop and report the concrete blocker. Do not use `--bare` as a shortcut: current official documentation says it bypasses subscription OAuth/keychain authentication. Do not bypass permissions.
+
+The first live run receives a short synthetic Research task entirely through supplied input, with model-accessible tools and delegation disabled. Require a schema-valid factual result and record raw supported events, requested/observed model identity, runtime version, termination status, usage when reported, and coverage gaps. External validation checks the result against fixture facts. Do not infer tool-event coverage from a run that intentionally offers no tools.
+
+The second run is reserved for bounded owned-process cancellation if needed; omit it when the first run's evidence already exercises the required cancellation case. Use one eligible model with an exact resolved ID, one live process at a time, at most three agentic turns and 180 seconds per run, and at most two runs total. Confirm the actual CLI accepts/enforces turn bounds; the external supervisor owns the wall-time/process limit. Authentication/rate-limit/model/usage uncertainty produces a blocked result and no automatic retry or billing fallback. Subscription usage is reported without inventing dollar costs or treating an API budget flag as proof of subscription limits.
+
+Keep raw authentication information private and redact sensitive metadata from receipts. This is a manual, local qualification with no subscription credentials or live model calls in GitHub CI. It does not qualify a reusable Claude adapter, worker sandbox, arbitrary tool permissions, live inter-agent messaging, remote execution, model quality generally, or independent agent QA; those remain Phase 2 and later requirements.
 
 ## Deliverables and package boundaries
 
@@ -126,14 +141,14 @@ Every required current check must be `passed` for the matching inputs. Failed, m
 
 | Resource | Ceiling / policy |
 | --- | --- |
-| Factory-initiated model calls / paid APIs | Zero. No extra usage or billing change. |
+| Factory-initiated model work / paid APIs | At most two approved standalone Claude Code qualification runs, one at a time, at most three agentic turns and 180 seconds each; no tools/delegation. All core tests use fake workers. No API billing, paid extra usage, or billing change. |
 | Test/build CPU and memory | At most two CPU equivalents and 4 GiB aggregate for owned work; at most two test workers. Establish and observe process-group limits before workloads. A V8 heap flag alone is insufficient. |
 | Fixture scheduler | At most two missions, three active fake attempts globally/host/provider, two per mission; descendants and retries share these limits. |
 | Work graph | At most 64 tasks per mission, fan-out 4, delegation depth 2, two attempts per task; rework consumes the same bounded graph/attempt budget. |
 | Automated execution time | At most 15 minutes per install/build/check invocation and 60 minutes cumulative before review; a subprocess-crash case has a 120-second timeout. No watch mode, soak test, automatic endless retries, or benchmark service. |
 | Storage | At most 4 GiB new project tooling/dependencies/state; require 10 GiB free before setup. Monitor owned footprint and stop growth at the budget. No claimed filesystem quota without an enforced quota. |
 | Event/artifact bounds | At most 64 KiB per message/event, 100,000 events per mission, 256 buffered gap events per producer, 8 MiB per artifact, 128 MiB evidence per mission. Reject before accepting oversized inputs. |
-| Network | Setup/review only: approved upstream registries, release/source/checksum endpoints, and advisory services. The fake adapter exposes no application network operation. This is not an OS sandbox claim. No telemetry upload or publishing. |
+| Network | Setup/review: approved upstream registries, release/source/checksum endpoints, and advisory services. The approved live trial additionally needs native Claude authentication/inference endpoints. The fake adapter exposes no application network operation. This is not an OS sandbox claim. No optional telemetry export or publishing. |
 | State/evidence retention | Ignored, operator-owned `.factory/` state. Preserve final review/failure evidence; clean only explicitly owned temporary files. No automatic retention service. |
 
 Latest Python and SQLite source builds may need toolchain work. Read-only preflight must confirm the compiler, headers, native libraries, interpreter distribution, and resource controls needed for the exact recipe. If an OS package, privileged change, container, additional service, wider network access, or larger budget is needed, return that concrete change for review. Do not alter existing user workloads to make capacity.
@@ -143,6 +158,7 @@ Latest Python and SQLite source builds may need toolchain work. Read-only prefli
 | Increment | Reviewable result | Exit before moving on |
 | --- | --- | --- |
 | 1. Shared versions and entry qualification | Canonical toolchain/catalog, exact lockfile, latest-version source/build receipts, foundation migration | Latest runtime/engine combination works locally; dependency/build policy and resource checks pass. |
+| 1a. Early real Claude qualification | Exact live probe recipe and local evidence from at most two bounded calls | Authorized subscription path, observed model/output, and owned cancellation are checked; incompatible or unavailable behavior is reported before adapter work. |
 | 2. Contracts and authority | Protocol, lab documents, approved plan/command/gate rules | Schema, impersonation, scope and cross-mission negative tests pass. |
 | 3. Durable ledger and recovery | Migrations, transactions, outbox, receipts, consistent replay | Real SQLite/process-crash and injected failure controls pass. |
 | 4. Scheduler and fake adapter | Reservations, fairness, conflict handling, cancellation, finite CLI | All concurrency and stale-attempt requirements pass. |
@@ -159,5 +175,7 @@ Local completion ends with a reviewed diff, precise validation record, documente
 ## Sources and current verification limits
 
 Checked: official [Node release index](https://nodejs.org/dist/index.json) and [26.13.0 release](https://nodejs.org/en/blog/release/v26.13.0); [Python 3.15.2](https://www.python.org/downloads/release/python-3152/) and [PyYAML files](https://pypi.org/pypi/PyYAML/6.0.3/json); version-specific npm metadata in the candidate inventory; [better-sqlite3 build guidance](https://github.com/WiseLibs/better-sqlite3/blob/v13.0.3/docs/compilation.md); [SQLite 3.54.1](https://sqlite.org/releaselog/3_54_1.html); [pnpm installation](https://pnpm.io/cli/install) and [supply-chain controls](https://pnpm.io/supply-chain-security); [Vitest requirements](https://vitest.dev/guide/); and [hosted image inventory](https://github.com/actions/runner-images#available-images).
+
+The live-probe proposal additionally checks the installed CLI's version/help, [official programmatic CLI guidance](https://code.claude.com/docs/en/headless), [CLI reference](https://code.claude.com/docs/en/cli-reference), and [version-specific Claude Code registry metadata](https://registry.npmjs.org/@anthropic-ai/claude-code/2.1.312). Documentation and help are not evidence of effective local authentication, limits, or permission enforcement.
 
 Registry metadata, declared licenses, integrity strings, and direct-package advisory responses were inspected. No candidate package or runtime was installed, no native build or application check was executed, and no resolved transitive graph exists yet. These remain implementation entry/exit requirements. The existing foundation environment has different versions and does not prove the proposed shared toolchain.
