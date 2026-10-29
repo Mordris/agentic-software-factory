@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+<title id="title">Factory architecture — proposed runtime</title><desc id="desc">You talk to Headquarters. A coordinator owns task state, authority and evidence; the web Headquarters follows its events. Seven specialist labs execute bounded work. External actions require a separate exact approval. The runtime is not implemented.</desc>
+<!-- Lobe Icons marks: MIT; see ../lobe/LICENSE and ../lobe/SOURCES.json. -->
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#293B50" opacity=".48"/></pattern><linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#78E7D3" stop-opacity=".12"/><stop offset="1" stop-color="#A8BEFF" stop-opacity=".02"/></linearGradient></defs>
+<style>text{font-family:"Segoe UI",Arial,sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect x="0" y="0" width="1200" height="900" rx="24" fill="#0B111B"/>
+<rect width="1200" height="900" rx="24" fill="url(#grid)"/>
+<text x="48" y="48" font-size="14" font-weight="600" fill="#78E7D3" letter-spacing="1.5">FACTORY ARCHITECTURE / PROPOSED RUNTIME</text>
+<text x="48" y="102" font-size="40" font-weight="600" fill="#F0F5FC">One interface. Many specialists.</text>
+<text x="48" y="136" font-size="20" font-weight="400" fill="#A4B6CA">A shared control plane connects intent, specialist work, and visible evidence.</text>
+<rect x="64" y="190" width="312" height="164" rx="16" fill="#121D2B" stroke="#293B50"/>
+<rect x="444" y="190" width="312" height="164" rx="16" fill="#121D2B" stroke="#293B50"/>
+<rect x="824" y="190" width="312" height="164" rx="16" fill="#121D2B" stroke="#293B50"/>
+<text x="86" y="222" font-size="13" font-weight="600" fill="#78E7D3" letter-spacing="1">YOU → HEADQUARTERS</text>
+<text x="86" y="259" font-size="27" font-weight="600" fill="#F0F5FC">Intent &amp; decisions</text>
+<svg xmlns="http://www.w3.org/2000/svg" height="29" viewBox="0 0 24 24" width="29" x="86" y="282"><title>Claude</title><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z" fill="#D97757" fill-rule="nonzero" /></svg>
+<text x="125" y="302" font-size="17" font-weight="400" fill="#A4B6CA">Claude Code · planned</text>
+<text x="86" y="330" font-size="16" font-weight="400" fill="#A4B6CA">One operator-facing entry point</text>
+<text x="466" y="222" font-size="13" font-weight="600" fill="#78E7D3" letter-spacing="1">DURABLE COORDINATOR</text>
+<text x="466" y="259" font-size="27" font-weight="600" fill="#F0F5FC">State + policy</text>
+<text x="466" y="300" font-size="17" font-weight="400" fill="#A4B6CA">Plans, tasks, leases &amp; approvals</text>
+<text x="466" y="328" font-size="17" font-weight="400" fill="#A4B6CA">Evidence and event history</text>
+<text x="846" y="222" font-size="13" font-weight="600" fill="#78E7D3" letter-spacing="1">WEB HEADQUARTERS</text>
+<text x="846" y="259" font-size="27" font-weight="600" fill="#F0F5FC">Live observability</text>
+<text x="846" y="300" font-size="17" font-weight="400" fill="#A4B6CA">Graph, traces &amp; communications</text>
+<text x="846" y="328" font-size="17" font-weight="400" fill="#A4B6CA">Inspect, reconnect, replay</text>
+<path d="M382 270 L438 270" fill="none" stroke="#78E7D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M432 266 L438 270 L432 274" fill="none" stroke="#78E7D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="410" y="253" font-size="12" font-weight="400" fill="#A4B6CA" text-anchor="middle">scope</text>
+<path d="M762 270 L818 270" fill="none" stroke="#78E7D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M812 266 L818 270 L812 274" fill="none" stroke="#78E7D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="790" y="253" font-size="12" font-weight="400" fill="#A4B6CA" text-anchor="middle">events</text>
+<text x="64" y="404" font-size="13" font-weight="600" fill="#A4B6CA" letter-spacing="1.5">SPECIALIST LABS / ACTIVATED FOR THE TASK</text>
+<path d="M600 354 V590 M190 434 H1010 M326 590 H874" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M190 434 L190 456" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M186 450 L190 456 L194 450" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M464 434 L464 456" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M460 450 L464 456 L468 450" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M738 434 L738 456" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M734 450 L738 456 L742 450" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1012 434 L1012 456" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1008 450 L1012 456 L1016 450" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M326 590 L326 600" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M322 594 L326 600 L330 594" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M600 590 L600 600" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M596 594 L600 600 L604 594" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M874 590 L874 600" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M870 594 L874 600 L878 594" fill="none" stroke="#607A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="64" y="462" width="250" height="112" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="82" y="487" font-size="12" font-weight="600" fill="#A8BEFF" letter-spacing="1">01</text>
+<text x="82" y="515" font-size="24" font-weight="600" fill="#F0F5FC">Research</text>
+<text x="82" y="541" font-size="17" font-weight="400" fill="#A4B6CA">Facts &amp; reproductions</text>
+<rect x="338" y="462" width="250" height="112" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="356" y="487" font-size="12" font-weight="600" fill="#A8BEFF" letter-spacing="1">02</text>
+<text x="356" y="515" font-size="24" font-weight="600" fill="#F0F5FC">Architecture</text>
+<text x="356" y="541" font-size="17" font-weight="400" fill="#A4B6CA">Decisions &amp; contracts</text>
+<rect x="612" y="462" width="250" height="112" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="630" y="487" font-size="12" font-weight="600" fill="#A8BEFF" letter-spacing="1">03</text>
+<text x="630" y="515" font-size="24" font-weight="600" fill="#F0F5FC">Production</text>
+<text x="630" y="541" font-size="17" font-weight="400" fill="#A4B6CA">Scoped implementation</text>
+<rect x="886" y="462" width="250" height="112" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="904" y="487" font-size="12" font-weight="600" fill="#A8BEFF" letter-spacing="1">04</text>
+<text x="904" y="515" font-size="24" font-weight="600" fill="#F0F5FC">QA</text>
+<text x="904" y="541" font-size="17" font-weight="400" fill="#A4B6CA">Independent verification</text>
+<rect x="201" y="606" width="250" height="112" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="219" y="631" font-size="12" font-weight="600" fill="#A8BEFF" letter-spacing="1">05</text>
+<text x="219" y="659" font-size="24" font-weight="600" fill="#F0F5FC">Security</text>
+<text x="219" y="685" font-size="17" font-weight="400" fill="#A4B6CA">Boundaries &amp; findings</text>
+<rect x="475" y="606" width="250" height="112" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="493" y="631" font-size="12" font-weight="600" fill="#A8BEFF" letter-spacing="1">06</text>
+<text x="493" y="659" font-size="24" font-weight="600" fill="#F0F5FC">Delivery</text>
+<text x="493" y="685" font-size="17" font-weight="400" fill="#A4B6CA">Exact action previews</text>
+<rect x="749" y="606" width="250" height="112" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="767" y="631" font-size="12" font-weight="600" fill="#A8BEFF" letter-spacing="1">07</text>
+<text x="767" y="659" font-size="24" font-weight="600" fill="#F0F5FC">Operations</text>
+<text x="767" y="685" font-size="17" font-weight="400" fill="#A4B6CA">Health &amp; recovery</text>
+<path d="M600 723 L600 753" fill="none" stroke="#78E7D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M596 747 L600 753 L604 747" fill="none" stroke="#78E7D3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="64" y="760" width="1072" height="80" rx="14" fill="#173E3C"/>
+<text x="86" y="792" font-size="13" font-weight="600" fill="#78E7D3" letter-spacing="1">DELIVERY IS A SEPARATE DECISION</text>
+<text x="86" y="821" font-size="26" font-weight="600" fill="#F0F5FC">Your exact approval</text>
+<text x="525" y="808" font-size="22" font-weight="500" fill="#F0F5FC">Push  /  PR  /  External message  /  Deployment</text>
+<text x="64" y="874" font-size="17" font-weight="400" fill="#A4B6CA">Isolated workspaces · bounded parallelism · linked evidence · remote workers</text>
+</svg>

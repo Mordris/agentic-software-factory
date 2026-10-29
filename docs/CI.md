@@ -1,12 +1,12 @@
 # CI scope and trust boundaries
 
-Status: foundation source prepared for qualification. Hosted execution, required-check names, security-tab results, and remote protections must be verified on the pushed revision before they are claimed operational.
+The initial public foundation at `b9aafe2f5f0e43e6fad46071721d48ef4abcdaf6` passed [Repository CI](https://github.com/Mordris/agentic-software-factory/actions/runs/40929419275) and [CodeQL](https://github.com/Mordris/agentic-software-factory/actions/runs/40929419212). Its uploaded analyses reported zero findings; the main/tag rulesets were applied and read back. Every later revision must pass its own checks. This qualifies the repository foundation, not the factory runtime.
 
 ## Current pipeline
 
 | Check | Scope |
 | --- | --- |
-| Foundation | Local document paths, safe YAML/JSON parsing, forms/labels, action/permission invariants, PR-title convention, icon provenance and SVG restrictions. |
+| Foundation | Local document/image/theme-source paths, deterministic documentation artwork, safe YAML/JSON parsing, forms/labels, action/permission invariants, PR-title convention, icon provenance and SVG restrictions. |
 | Tooling regressions | Invalid titles, duplicate/aliased YAML, escaping/missing paths, workflow privilege/injection regressions, checksum and archive extraction boundaries. |
 | Workflow audit | actionlint validates Actions syntax/expressions; offline pedantic zizmor inspects workflow security. |
 | Secret audit | Gitleaks scans all history available to the checked-out public source and redacts findings. |

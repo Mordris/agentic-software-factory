@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280" role="img" aria-labelledby="title desc">
+<title id="title">Ship what the evidence proves.</title><desc id="desc">Exact artifacts. Deliberate approval. Verified outcomes.</desc>
+<!-- Lobe Icons marks: MIT; see ../lobe/LICENSE and ../lobe/SOURCES.json. -->
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#293B50" opacity=".48"/></pattern><linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#78E7D3" stop-opacity=".12"/><stop offset="1" stop-color="#A8BEFF" stop-opacity=".02"/></linearGradient></defs>
+<style>text{font-family:"Segoe UI",Arial,sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect x="0" y="0" width="440" height="280" rx="24" fill="#0B111B"/>
+<rect width="440" height="280" rx="24" fill="url(#grid)"/>
+<text x="28" y="40" font-size="12" font-weight="600" fill="#78E7D3" letter-spacing="1.5">RELEASE FIELD GUIDE</text>
+<text x="20" y="91" font-size="32" font-weight="600" fill="#F0F5FC">Ship what the evidence</text>
+<text x="20" y="133" font-size="32" font-weight="600" fill="#F0F5FC">proves.</text>
+<text x="20" y="189" font-size="10" font-weight="600" fill="#A4B6CA" letter-spacing="0.8">AGENTIC SOFTWARE FACTORY / PUBLIC PRE-ALPHA</text>
+<rect x="20" y="219" width="120" height="28" rx="7" fill="#173E3C"/>
+<text x="32" y="238" font-size="16" font-weight="600" fill="#78E7D3">QUALIFY</text>
+<rect x="154" y="219" width="120" height="28" rx="7" fill="#182738"/>
+<text x="166" y="238" font-size="16" font-weight="600" fill="#A4B6CA">APPROVE</text>
+<rect x="288" y="219" width="120" height="28" rx="7" fill="#182738"/>
+<text x="300" y="238" font-size="16" font-weight="600" fill="#A4B6CA">VERIFY</text>
+</svg>

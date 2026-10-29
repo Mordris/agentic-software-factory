@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="242" viewBox="0 0 1200 242" role="img" aria-labelledby="title desc">
+<title id="title">Factory operating principles</title><desc id="desc">The proposed factory supports concurrent missions, evidence-bound results, and explicit authority for external actions.</desc>
+<!-- Lobe Icons marks: MIT; see ../lobe/LICENSE and ../lobe/SOURCES.json. -->
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#D3DEEC" opacity=".48"/></pattern><linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#087467" stop-opacity=".12"/><stop offset="1" stop-color="#465FC3" stop-opacity=".02"/></linearGradient></defs>
+<style>text{font-family:"Segoe UI",Arial,sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect x="0" y="0" width="1200" height="242" rx="24" fill="#F4F7FC"/>
+<rect width="1200" height="242" rx="24" fill="url(#grid)"/>
+<rect x="36" y="24" width="360" height="194" rx="14" fill="#FFFFFF" stroke="#D3DEEC"/>
+<text x="56" y="52" font-size="12" font-weight="600" fill="#465FC3" letter-spacing="1">01</text>
+<text x="56" y="89" font-size="26" font-weight="600" fill="#14253D">Parallel work.</text>
+<text x="56" y="121" font-size="26" font-weight="600" fill="#14253D">Separate authority.</text>
+<text x="56" y="165" font-size="17" font-weight="400" fill="#526881">Multiple missions, scoped workspaces,</text>
+<text x="56" y="190" font-size="17" font-weight="400" fill="#526881">shared limits and conflict leases.</text>
+<rect x="420" y="24" width="360" height="194" rx="14" fill="#FFFFFF" stroke="#D3DEEC"/>
+<text x="440" y="52" font-size="12" font-weight="600" fill="#465FC3" letter-spacing="1">02</text>
+<text x="440" y="89" font-size="26" font-weight="600" fill="#14253D">Evidence first.</text>
+<text x="440" y="121" font-size="26" font-weight="600" fill="#14253D">Every result linked.</text>
+<text x="440" y="165" font-size="17" font-weight="400" fill="#526881">Checks bind to the source snapshot.</text>
+<text x="440" y="190" font-size="17" font-weight="400" fill="#526881">Missing evidence blocks promotion.</text>
+<rect x="804" y="24" width="360" height="194" rx="14" fill="#FFFFFF" stroke="#D3DEEC"/>
+<text x="824" y="52" font-size="12" font-weight="600" fill="#465FC3" letter-spacing="1">03</text>
+<text x="824" y="89" font-size="26" font-weight="600" fill="#14253D">Visible boundaries.</text>
+<text x="824" y="121" font-size="26" font-weight="600" fill="#14253D">Deliberate delivery.</text>
+<text x="824" y="165" font-size="17" font-weight="400" fill="#526881">Trace every supported handoff.</text>
+<text x="824" y="190" font-size="17" font-weight="400" fill="#526881">Approve each exact external action.</text>
+</svg>

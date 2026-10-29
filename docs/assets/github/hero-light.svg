@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+<title id="title">Agentic Software Factory</title><desc id="desc">One Headquarters, specialized labs, observable work. Public pre-alpha; Claude Code is the first planned runtime.</desc>
+<!-- Lobe Icons marks: MIT; see ../lobe/LICENSE and ../lobe/SOURCES.json. -->
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#D3DEEC" opacity=".48"/></pattern><linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#087467" stop-opacity=".12"/><stop offset="1" stop-color="#465FC3" stop-opacity=".02"/></linearGradient></defs>
+<style>text{font-family:"Segoe UI",Arial,sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect x="0" y="0" width="1200" height="430" rx="24" fill="#F4F7FC"/>
+<rect width="1200" height="430" rx="24" fill="url(#grid)"/>
+<rect x="683.9999999999999" y="0" width="516.0" height="430" rx="24" fill="url(#wash)"/>
+<text x="54" y="54" font-size="14" font-weight="600" fill="#526881" letter-spacing="2">SOFTWARE DEVELOPMENT, ORCHESTRATED</text>
+<text x="54" y="143" font-size="70" font-weight="700" fill="#14253D">Agentic Software</text>
+<text x="54" y="215" font-size="70" font-weight="700" fill="#14253D">Factory</text>
+<text x="54" y="270" font-size="22" font-weight="400" fill="#526881">One Headquarters. Specialized labs.</text>
+<text x="54" y="302" font-size="22" font-weight="400" fill="#526881">Work you can inspect.</text>
+<rect x="744" y="94" width="402" height="236" rx="20" fill="#FFFFFF" stroke="#D3DEEC"/>
+<text x="768" y="127" font-size="12" font-weight="600" fill="#526881" letter-spacing="1.5">FROM INTENT TO EVIDENCE</text>
+<rect x="768" y="150" width="155" height="62" rx="10" fill="#E8EFF8"/>
+<text x="786" y="177" font-size="12" font-weight="600" fill="#526881">01 / PLAN</text>
+<text x="786" y="199" font-size="17" font-weight="600" fill="#14253D">Bound the work</text>
+<path d="M930 181 L955 181" fill="none" stroke="#087467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M949 177 L955 181 L949 185" fill="none" stroke="#087467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="964" y="150" width="158" height="62" rx="10" fill="#E8EFF8"/>
+<text x="982" y="177" font-size="12" font-weight="600" fill="#526881">02 / EXECUTE</text>
+<text x="982" y="199" font-size="17" font-weight="600" fill="#14253D">Coordinate labs</text>
+<path d="M1043 219 V237 H846 V250" fill="none" stroke="#087467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="768" y="250" width="354" height="57" rx="10" fill="#DDF4EE"/>
+<text x="786" y="275" font-size="12" font-weight="600" fill="#087467">03 / VERIFY</text>
+<text x="786" y="297" font-size="18" font-weight="600" fill="#14253D">Evidence before delivery</text>
+<svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30" x="766" y="354"><title>Claude</title><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z" fill="#D97757" fill-rule="nonzero" /></svg>
+<text x="808" y="374" font-size="17" font-weight="400" fill="#526881">Claude Code · first planned runtime</text>
+<rect x="54" y="356" width="183" height="28" rx="7" fill="#DDF4EE"/>
+<text x="66" y="375" font-size="14" font-weight="600" fill="#087467">PUBLIC PRE-ALPHA</text>
+<text x="253" y="376" font-size="17" font-weight="400" fill="#526881">Architecture + repository foundation</text>
+</svg>

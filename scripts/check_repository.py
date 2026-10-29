@@ -3,6 +3,7 @@
 """Bounded foundation checks; this is not an application/security certification."""
 
 import hashlib
+from html.parser import HTMLParser
 import json
 import os
 from pathlib import Path
@@ -101,6 +102,21 @@ def safe_local_target(root, source, target):
     require(path.exists(), f"{source}: missing local target {target}")
 
 
+class LocalImageLinks(HTMLParser):
+    def __init__(self, root, source):
+        super().__init__()
+        self.root, self.source = root, source
+
+    def handle_starttag(self, tag, attributes):
+        if tag not in {"img", "source"}:
+            return
+        values = dict(attributes)
+        for field in ("src", "srcset"):
+            for candidate in values.get(field, "").split(","):
+                if candidate.strip():
+                    safe_local_target(self.root, self.source, candidate.strip().split()[0])
+
+
 def check_repository(root):
     files = subprocess.check_output(["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"], cwd=root).split(b"\0")
     paths = sorted({os.fsdecode(value) for value in files if value})
@@ -113,6 +129,7 @@ def check_repository(root):
             require(not re.search(r"/(?:home|Users)/[A-Za-z0-9_.-]+/", text), f"{name}: operator-specific absolute path")
             for target in re.findall(r"\]\(([^)]+)\)", text):
                 safe_local_target(root, path, target)
+            LocalImageLinks(root, path).feed(text)
         if path.suffix in {".yml", ".yaml"}:
             load_yaml(path)
         if path.suffix == ".json":
@@ -165,6 +182,9 @@ def check_repository(root):
     if os.environ.get("GITHUB_EVENT_NAME") == "pull_request" and event_path:
         title = json.loads(Path(event_path).read_text())["pull_request"]["title"]
         require(valid_subject(title), "PR title must follow Conventional Commits, <=100 characters")
+    result = subprocess.run([sys.executable, str(root / "scripts/generate_docs_assets.py"), "--check"],
+                            cwd=root, check=False)
+    require(result.returncode == 0, "Documentation artwork is stale; regenerate from its source")
     print(f"Foundation checks passed: {len(paths)} files; {len(labels)} labels; no runtime qualification implied.")
 
 

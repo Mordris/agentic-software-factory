@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="246" viewBox="0 0 1200 246" role="img" aria-labelledby="title desc">
+<title id="title">An honest development roadmap</title><desc id="desc">Repository foundation and CI exist. Durable core, visual Headquarters, Claude adapter, and a qualified preview remain planned milestones.</desc>
+<!-- Lobe Icons marks: MIT; see ../lobe/LICENSE and ../lobe/SOURCES.json. -->
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#293B50" opacity=".48"/></pattern><linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#78E7D3" stop-opacity=".12"/><stop offset="1" stop-color="#A8BEFF" stop-opacity=".02"/></linearGradient></defs>
+<style>text{font-family:"Segoe UI",Arial,sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect x="0" y="0" width="1200" height="246" rx="24" fill="#0B111B"/>
+<rect width="1200" height="246" rx="24" fill="url(#grid)"/>
+<rect x="32" y="24" width="216" height="198" rx="14" fill="#121D2B" stroke="#78E7D3"/>
+<text x="50" y="52" font-size="12" font-weight="600" fill="#78E7D3" letter-spacing="1">01</text>
+<rect x="137" y="36" width="97" height="28" rx="7" fill="#173E3C"/>
+<text x="149" y="55" font-size="14" font-weight="600" fill="#78E7D3">PRESENT</text>
+<text x="50" y="88" font-size="23" font-weight="600" fill="#F0F5FC">Repository</text>
+<text x="50" y="117" font-size="23" font-weight="600" fill="#F0F5FC">foundation</text>
+<text x="50" y="181" font-size="15" font-weight="400" fill="#A4B6CA">CI + policies</text>
+<rect x="266" y="24" width="216" height="198" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="284" y="52" font-size="12" font-weight="600" fill="#A4B6CA" letter-spacing="1">02</text>
+<rect x="371" y="36" width="97" height="28" rx="7" fill="#182738"/>
+<text x="383" y="55" font-size="14" font-weight="600" fill="#A4B6CA">PLANNED</text>
+<text x="284" y="88" font-size="23" font-weight="600" fill="#F0F5FC">Durable</text>
+<text x="284" y="117" font-size="23" font-weight="600" fill="#F0F5FC">core</text>
+<text x="284" y="181" font-size="15" font-weight="400" fill="#A4B6CA">State + concurrency</text>
+<rect x="500" y="24" width="216" height="198" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="518" y="52" font-size="12" font-weight="600" fill="#A4B6CA" letter-spacing="1">03</text>
+<rect x="605" y="36" width="97" height="28" rx="7" fill="#182738"/>
+<text x="617" y="55" font-size="14" font-weight="600" fill="#A4B6CA">PLANNED</text>
+<text x="518" y="88" font-size="23" font-weight="600" fill="#F0F5FC">Visual</text>
+<text x="518" y="117" font-size="23" font-weight="600" fill="#F0F5FC">Headquarters</text>
+<text x="518" y="181" font-size="15" font-weight="400" fill="#A4B6CA">Graph + recovery</text>
+<rect x="734" y="24" width="216" height="198" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="752" y="52" font-size="12" font-weight="600" fill="#A4B6CA" letter-spacing="1">04</text>
+<rect x="839" y="36" width="97" height="28" rx="7" fill="#182738"/>
+<text x="851" y="55" font-size="14" font-weight="600" fill="#A4B6CA">PLANNED</text>
+<text x="752" y="88" font-size="23" font-weight="600" fill="#F0F5FC">Claude</text>
+<text x="752" y="117" font-size="23" font-weight="600" fill="#F0F5FC">adapter</text>
+<text x="752" y="181" font-size="15" font-weight="400" fill="#A4B6CA">Qualified execution</text>
+<rect x="968" y="24" width="216" height="198" rx="14" fill="#121D2B" stroke="#293B50"/>
+<text x="986" y="52" font-size="12" font-weight="600" fill="#A4B6CA" letter-spacing="1">05</text>
+<rect x="1073" y="36" width="97" height="28" rx="7" fill="#182738"/>
+<text x="1085" y="55" font-size="14" font-weight="600" fill="#A4B6CA">PLANNED</text>
+<text x="986" y="88" font-size="23" font-weight="600" fill="#F0F5FC">Qualified</text>
+<text x="986" y="117" font-size="23" font-weight="600" fill="#F0F5FC">preview</text>
+<text x="986" y="181" font-size="15" font-weight="400" fill="#A4B6CA">Evidence + release gates</text>
+</svg>

@@ -1,8 +1,22 @@
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 700px)" srcset="docs/assets/github/governance-mobile-dark.svg">
+  <source media="(max-width: 700px)" srcset="docs/assets/github/governance-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/github/governance-dark.svg">
+  <img src="docs/assets/github/governance-light.svg" width="100%" alt="">
+</picture>
+
 # Governance
 
 Mordris is the initial maintainer. This project develops publicly as a pre-alpha experiment. Visibility is separate from runtime qualification, supported releases, and deployment approval.
 
 ## Decisions
+
+| Decision | Accountable party | Record |
+| --- | --- | --- |
+| Product scope and accepted changes | Maintainer | Reviewed proposal and PR |
+| A mission's plan, budget, and external actions | Operator | Exact, scoped approval |
+| Technical readiness | Relevant reviewers and required checks | Evidence on the current snapshot |
+| Release publication | Maintainer and authorizing operator | Reviewed artifacts and action receipt |
 
 Material changes use a reviewable issue/PR or design decision with alternatives, authority implications, acceptance criteria, and evidence. Review code, instructions, and runtime policy together when their contracts change. The maintainer decides scope and accepts changes. Contributors are accountable for correctness and provenance regardless of their tools. Follow [community conduct](CODE_OF_CONDUCT.md).
 

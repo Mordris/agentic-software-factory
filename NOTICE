@@ -3,7 +3,8 @@ Copyright 2026 Agentic Software Factory contributors
 
 Original project material is licensed under the Apache License, Version 2.0.
 
-Third-party icon assets in docs/assets/lobe are from Lobe Icons:
+Third-party icon assets in docs/assets/lobe, including marks embedded in
+the generated documentation SVGs in docs/assets/github, are from Lobe Icons:
 https://github.com/lobehub/lobe-icons
 Copyright (c) 2023 LobeHub
 MIT License; the full notice is retained in docs/assets/lobe/LICENSE.
