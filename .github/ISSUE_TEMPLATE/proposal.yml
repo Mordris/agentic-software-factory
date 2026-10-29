@@ -1,0 +1,31 @@
+name: Feature or architecture proposal
+description: Propose a bounded capability or design change.
+title: "Proposal: "
+labels: ["type:feature", "status:needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and desired outcome
+      description: Describe the operator's need and observable success.
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Approach and alternatives
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria and verification evidence
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Authority, data, compatibility, and resource impact
+      description: Permissions, sensitive data, dependencies, migrations, and execution cost.
+    validations:
+      required: true

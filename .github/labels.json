@@ -1,0 +1,97 @@
+[
+  {
+    "name": "type:bug",
+    "color": "b42318",
+    "description": "Existing behavior is incorrect"
+  },
+  {
+    "name": "type:feature",
+    "color": "1570ef",
+    "description": "Proposed or implemented capability"
+  },
+  {
+    "name": "type:docs",
+    "color": "175cd3",
+    "description": "Documentation or research"
+  },
+  {
+    "name": "type:security",
+    "color": "912018",
+    "description": "Security-sensitive finding or mitigation"
+  },
+  {
+    "name": "type:maintenance",
+    "color": "475467",
+    "description": "Repository, tooling, or maintenance work"
+  },
+  {
+    "name": "area:core",
+    "color": "6941c6",
+    "description": "Task engine, authority, state, and evidence"
+  },
+  {
+    "name": "area:dashboard",
+    "color": "6941c6",
+    "description": "Web Headquarters, graph, and inspectors"
+  },
+  {
+    "name": "area:claude",
+    "color": "6941c6",
+    "description": "Claude Code runtime adapter"
+  },
+  {
+    "name": "area:transport",
+    "color": "6941c6",
+    "description": "Remote workers, event streams, and recovery"
+  },
+  {
+    "name": "area:ci",
+    "color": "6941c6",
+    "description": "CI, supply chain, and release tooling"
+  },
+  {
+    "name": "priority:p0",
+    "color": "b42318",
+    "description": "Critical impact requiring immediate triage"
+  },
+  {
+    "name": "priority:p1",
+    "color": "b54708",
+    "description": "High-priority accepted work"
+  },
+  {
+    "name": "priority:p2",
+    "color": "475467",
+    "description": "Normal-priority work"
+  },
+  {
+    "name": "status:needs-triage",
+    "color": "b54708",
+    "description": "Awaiting reproduction or scope review"
+  },
+  {
+    "name": "status:accepted",
+    "color": "027a48",
+    "description": "Scoped and accepted; check current ownership"
+  },
+  {
+    "name": "status:blocked",
+    "color": "b54708",
+    "description": "Cannot progress; blocking condition documented"
+  },
+  {
+    "name": "breaking-change",
+    "color": "b42318",
+    "description": "Incompatible contract, behavior, or migration"
+  },
+  {
+    "name": "dependencies",
+    "color": "475467",
+    "description": "Dependency inventory or version change"
+  },
+  {
+    "name": "good first issue",
+    "color": "027a48",
+    "description": "Bounded, documented task suitable for a new contributor"
+  }
+]

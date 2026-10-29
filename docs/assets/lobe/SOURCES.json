@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/lobehub/lobe-icons",
+  "commit": "8b7bbc433d38437fa2b0cca58ae896917162b812",
+  "license": "MIT",
+  "assets": [
+    {
+      "file": "claude-color.svg",
+      "upstream_path": "packages/static-svg/icons/claude-color.svg",
+      "sha256": "d4366130584b1027bbc376e3c06a48500d6e862403a69556726d7722610e5561"
+    },
+    {
+      "file": "lobehub-color.svg",
+      "upstream_path": "packages/static-svg/icons/lobehub-color.svg",
+      "sha256": "e3baa7c45ac190f043886c885dd571a7548d9eafe92d84d2bf95a570327df70c"
+    },
+    {
+      "file": "LICENSE",
+      "upstream_path": "LICENSE",
+      "sha256": "add9d7531d1b21646317a8958e38fc727506fa39d24bdecb44154d943c82753a"
+    }
+  ]
+}

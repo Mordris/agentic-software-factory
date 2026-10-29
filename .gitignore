@@ -1,0 +1,21 @@
+# Credentials and operator-specific settings
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+*.pem
+*.key
+
+# Local factory state and generated adapter packages
+.factory/
+.generated/
+artifacts/private/
+
+# Build and development output
+node_modules/
+dist/
+coverage/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store

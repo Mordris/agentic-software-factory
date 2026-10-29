@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-29",
+  "actions": [
+    {
+      "repository": "actions/checkout",
+      "ref": "v7.0.1",
+      "commit": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+    },
+    {
+      "repository": "actions/setup-python",
+      "ref": "v7.1.0",
+      "commit": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0"
+    },
+    {
+      "repository": "github/codeql-action",
+      "ref": "v4",
+      "tag_object": "793b778da9c9275a0f276522b27cb5fc14bba279",
+      "commit": "9b3254085494b55a0f7c4c2b3d2d52cc712ce370"
+    }
+  ]
+}

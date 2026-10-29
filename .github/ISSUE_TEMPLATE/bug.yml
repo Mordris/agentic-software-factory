@@ -1,0 +1,33 @@
+name: Bug report
+description: Reproduce a problem in existing source, tooling, or documented behavior.
+title: "Bug: "
+labels: ["type:bug", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not post vulnerabilities, credentials, private code, or sensitive logs. Follow SECURITY.md for private reports.
+  - type: input
+    id: revision
+    attributes:
+      label: Revision and environment
+      description: Commit/tag, OS, runtime/tool versions, and relevant configuration.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Exact steps or a synthetic fixture, including the failing command.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+      description: Explain both with sanitized evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact and workaround

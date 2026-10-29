@@ -1,0 +1,12 @@
+name: Design question
+description: Clarify a design, limitation, or contribution path.
+title: "Question: "
+labels: ["status:needs-triage"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question and context
+      description: Link the design or source you read. Avoid sensitive information.
+    validations:
+      required: true

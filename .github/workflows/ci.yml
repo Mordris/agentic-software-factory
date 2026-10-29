@@ -1,0 +1,83 @@
+name: Repository CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+  workflow_dispatch:
+  schedule:
+    - cron: '23 7 * * 1'
+
+permissions: {}
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  foundation:
+    name: Foundation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Install hash-pinned validation dependency
+        run: >-
+          python -m pip install --disable-pip-version-check --require-hashes
+          --only-binary=:all: --no-deps -r .github/requirements-ci.txt
+        env:
+          PIP_DEFAULT_TIMEOUT: '20'
+      - name: Check repository contracts and PR title
+        run: python scripts/check_repository.py
+      - name: Check validator and download boundaries
+        run: python -m unittest discover -s tests -p 'test_*.py'
+
+  workflow-security:
+    name: Workflow and secret audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Validate workflow syntax and expressions
+        run: python scripts/ci_tools.py actionlint -color
+      - name: Audit workflow security
+        run: python scripts/ci_tools.py zizmor --offline --no-progress --strict-collection --persona pedantic .github/workflows
+      - name: Scan full available Git history for secrets
+        run: python scripts/ci_tools.py gitleaks git --redact=100 --no-banner --exit-code=1 .
+
+  gate:
+    name: CI gate
+    if: ${{ always() }}
+    needs: [foundation, workflow-security]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    permissions: {}
+    steps:
+      - name: Require every mandatory job to succeed
+        run: |
+          test "$FOUNDATION_RESULT" = success
+          test "$SECURITY_RESULT" = success
+        env:
+          FOUNDATION_RESULT: ${{ needs.foundation.result }}
+          SECURITY_RESULT: ${{ needs.workflow-security.result }}

@@ -1,0 +1,31 @@
+name: Release readiness
+description: Collect qualification evidence and exact publication approvals.
+title: "Release readiness: "
+labels: ["type:maintenance"]
+body:
+  - type: input
+    id: revision
+    attributes:
+      label: Proposed version and exact commit
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Qualification and supported environments
+      description: Executed checks, recovery/boundary evidence, artifact hashes, provenance, and installation verification.
+    validations:
+      required: true
+  - type: textarea
+    id: changes
+    attributes:
+      label: Release notes, limitations, and migration/recovery
+    validations:
+      required: true
+  - type: textarea
+    id: approvals
+    attributes:
+      label: Exact actions needing approval
+      description: Destinations and commit/payload/artifact digests. This issue does not grant approval.
+    validations:
+      required: true
