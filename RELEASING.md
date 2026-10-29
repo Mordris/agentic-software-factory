@@ -1,3 +1,10 @@
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 700px)" srcset="docs/assets/github/releasing-mobile-dark.svg">
+  <source media="(max-width: 700px)" srcset="docs/assets/github/releasing-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/github/releasing-dark.svg">
+  <img src="docs/assets/github/releasing-light.svg" width="100%" alt="">
+</picture>
+
 # Release policy
 
 There are no releases or publishable runtime artifacts. Public development and warnings do not substitute for qualification.
@@ -9,6 +16,13 @@ Use Semantic Versioning for artifacts. Begin previews with a prerelease such as 
 Prepare a release-readiness issue and PR with the exact commit, scope, environment matrix, executed evidence, dependency/license review, limitations, migration/recovery notes, and release-note draft. [.github/release.yml](.github/release.yml) categorizes draft notes; review them before publication.
 
 ## First executable release gate
+
+| Gate | Required evidence |
+| --- | --- |
+| Qualification | Behavior, trust boundaries, recovery, and supported environments |
+| Artifact integrity | Clean build, SBOM, notices, digests, verified provenance |
+| Authorization | Exact destination, source revision, payload, and artifact approval |
+| Outcome | Installation, remote contents, and rollback/stop verification |
 
 - Build and test the exact commit with frozen dependencies in a clean, qualified environment.
 - Demonstrate acceptance, authority boundaries, isolation, cancellation, crash/restart, reconnect, stale approval rejection, and missing-evidence failure behavior relevant to the supported features.

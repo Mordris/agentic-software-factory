@@ -1,76 +1,107 @@
-<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 700px)" srcset="docs/assets/github/hero-mobile-dark.svg">
+  <source media="(max-width: 700px)" srcset="docs/assets/github/hero-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/github/hero-dark.svg">
+  <img src="docs/assets/github/hero-light.svg" width="100%" alt="Agentic Software Factory. One Headquarters, specialized labs, and work you can inspect. Public pre-alpha; Claude Code is the first planned runtime.">
+</picture>
 
-# Agentic Software Factory
+<p align="center">
+  <a href="docs/ARCHITECTURE.md"><strong>Architecture</strong></a> &nbsp;·&nbsp;
+  <a href="docs/DASHBOARD.md"><strong>Live Headquarters</strong></a> &nbsp;·&nbsp;
+  <a href="docs/IMPLEMENTATION_PLAN.md"><strong>Roadmap</strong></a> &nbsp;·&nbsp;
+  <a href="CONTRIBUTING.md"><strong>Contribute</strong></a>
+</p>
 
-**One Headquarters. Specialized labs. Observable work. Human-approved delivery.**
+<p align="center">
+  <a href="https://github.com/Mordris/agentic-software-factory/actions/workflows/ci.yml"><img src="https://github.com/Mordris/agentic-software-factory/actions/workflows/ci.yml/badge.svg?branch=main" alt="Repository CI status"></a>
+  <a href="https://github.com/Mordris/agentic-software-factory/actions/workflows/codeql.yml"><img src="https://github.com/Mordris/agentic-software-factory/actions/workflows/codeql.yml/badge.svg?branch=main" alt="CodeQL status"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-5274b8?style=flat-square" alt="Apache-2.0 license"></a>
+</p>
 
-[Architecture](docs/ARCHITECTURE.md) · [Live graph](docs/DASHBOARD.md) · [Roadmap](docs/IMPLEMENTATION_PLAN.md) · [Contributing](CONTRIBUTING.md)
-
-**Pre-alpha · Repository foundation · Apache-2.0**
-
-</div>
+A generic, agentic software factory being built around **one operator-facing Headquarters**. Specialized labs will coordinate research, design, implementation, independent verification, and delivery preparation. OSS contributions are the first mode; the core is designed for software work beyond OSS.
 
 > [!WARNING]
-> This project is under active design. The factory runtime, dashboard, worker isolation, and approval enforcement are **not implemented or qualified**. There is no supported installation or unattended execution mode yet. Do not give this project production credentials or workloads.
+> **Public pre-alpha.** Repository policies and foundation CI exist. The factory runtime, dashboard, worker isolation, and approval enforcement are **not implemented or qualified**. There is no supported installation or unattended execution mode. Do not provide production credentials or workloads.
 
-Agentic Software Factory is a generic development organization you operate through Headquarters. Its planned labs research, design, implement, independently verify, and prepare delivery inside an approved scope. Open-source contributions are the first mode; the core is intended to support other software work.
+## Work you can follow. Authority you can inspect.
 
-## Intended workflow
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 700px)" srcset="docs/assets/github/principles-mobile-dark.svg">
+  <source media="(max-width: 700px)" srcset="docs/assets/github/principles-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/github/principles-dark.svg">
+  <img src="docs/assets/github/principles-light.svg" width="100%" alt="Three design principles: concurrent missions with separate authority; evidence tied to source snapshots; visible boundaries and approval for exact external actions.">
+</picture>
 
-```mermaid
-flowchart LR
-    Operator[You] <--> HQ[Headquarters]
-    HQ <--> Core[Durable coordination and policy]
-    Core <--> Research[Research and architecture]
-    Core <--> Production[Production]
-    Core <--> QA[Independent QA and security]
-    Core <--> Delivery[Delivery preparation]
-    Core --> Events[Durable event history]
-    Events --> Web[Live web Headquarters]
-    Delivery --> Approval[Your exact action approval]
-```
+These are the operating requirements we are building toward. Multiple missions and compatible subtasks will share bounded resources while keeping plans, workspaces, messages, evidence, and approvals separate. Canceling one mission must leave the others progressing. [Concurrency contract →](docs/CONCURRENCY.md)
 
-An approved plan permits bounded local work on the designated execution machines. Each push, PR, external message, and deployment needs a separate approval. Internal delegation cannot expand authority.
+## Inside the factory
 
-The web application will connect machines, labs, tasks, attempts, model/tool calls, communications, approvals, and evidence. The graph, waterfall, history, and inspectors will share one event projection. A disconnected viewer will show its last observation and replay missed events after reconnecting.
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 700px)" srcset="docs/assets/github/architecture-mobile-dark.svg">
+  <source media="(max-width: 700px)" srcset="docs/assets/github/architecture-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/github/architecture-dark.svg">
+  <img src="docs/assets/github/architecture-light.svg" width="100%" alt="Proposed architecture: you talk to Headquarters; a durable coordinator owns tasks, policy, approvals, and evidence; the web Headquarters follows its events. Research, Architecture, Production, QA, Security, Delivery, and Operations perform bounded work. Each external action requires your exact approval.">
+</picture>
 
-Multiple missions and compatible tasks are intended to run concurrently, with separate plans, workspaces, evidence, and approvals under shared resource limits. Conflicting writes and delivery targets must coordinate. See [concurrency requirements](docs/CONCURRENCY.md).
+**Proposed runtime architecture.** Labs are capabilities activated for a task, with parallel execution where safe. They are not eight permanently running processes. The web graph, traces, communications, and evidence inspectors will follow one durable event history, including work on remote machines.
 
-## What exists today
+<details>
+<summary><strong>Read the architecture in text</strong></summary>
 
-| Area | Current state |
+1. **Headquarters** turns an objective into a bounded plan for your approval.
+2. **The coordinator** owns task state, authority, resource leases, evidence references, and event history.
+3. **Specialist labs** exchange scoped tasks, findings, questions, and rework through the broker.
+4. **Independent QA and Security** evaluate the relevant acceptance and trust boundaries. Missing or failed required evidence blocks promotion.
+5. **The web Headquarters** shows the same managed work as a graph, trace, task list, communication ledger, and replayable history.
+6. **Delivery** prepares an exact preview. Every push, PR, external message, and deployment requires a distinct approval; delegation cannot expand authority.
+
+See the [architecture](docs/ARCHITECTURE.md), [verification requirements](docs/VERIFICATION.md), and [remote protocol](docs/DASHBOARD.md).
+
+</details>
+
+## An honest roadmap
+
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 700px)" srcset="docs/assets/github/roadmap-mobile-dark.svg">
+  <source media="(max-width: 700px)" srcset="docs/assets/github/roadmap-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/github/roadmap-dark.svg">
+  <img src="docs/assets/github/roadmap-light.svg" width="100%" alt="Present: repository foundation and CI. Planned: durable core and concurrent missions; visual Headquarters and reconnect; Claude adapter and execution qualification; a qualified preview with release gates.">
+</picture>
+
+**Today:** architecture proposals, repository policies, templates, licensed assets, and foundation CI. **Still ahead:** the coordinator, web application, runtime adapter, isolated execution, and supported releases. Each milestone has [measurable exit criteria](docs/IMPLEMENTATION_PLAN.md).
+
+Foundation CI checks source/configuration, tooling regressions, workflow security, secrets, and current Python/Actions code. A green foundation check does not establish runtime safety, agent correctness, or production readiness. [CI scope →](docs/CI.md)
+
+## The first runtime, deliberately scoped
+
+<table>
+<tr>
+<td width="80" align="center"><img src="docs/assets/lobe/claude-color.svg" width="48" height="48" alt="Claude icon from Lobe Icons"></td>
+<td><strong>Claude Code · first planned adapter</strong><br>Native agents, skills, and qualified execution interfaces. Choose models from the operator's authorized inventory and resource limits. Runtime behavior still needs local and remote qualification.</td>
+</tr>
+</table>
+
+The proposed web stack is **React + TypeScript**, with **React Flow + ELK** for the graph and a persistent **Node/Fastify** coordinator backed by a transactional **SQLite** ledger. [Stack decisions and qualification →](docs/TECH_STACK.md)
+
+## Explore. Challenge. Contribute.
+
+| Understand the system | Help build it |
 | --- | --- |
-| Architecture, lab responsibilities, remote protocol, stack | Design proposals |
-| Repository policies, templates, audit tooling, CI definitions | Foundation source; qualification status is recorded separately |
-| Coordinator, dashboard, runtime adapter, isolated workers | Not implemented |
-| Live end-to-end runs and production qualification | Not performed |
-| Releases and published packages | None |
+| [Charter & operating boundaries](docs/CHARTER.md) | [Contributor field guide](CONTRIBUTING.md) |
+| [Web Headquarters & remote observability](docs/DASHBOARD.md) | [Development instructions](AGENTS.md) |
+| [Evidence & authority](docs/VERIFICATION.md) | [Governance & review](GOVERNANCE.md) |
+| [Dated platform research](docs/PLATFORM_RESEARCH.md) | [Release qualification](RELEASING.md) |
 
-CI checks the repository foundation. A green foundation check does not establish runtime safety, agent correctness, or production readiness. See [CI scope and qualification](docs/CI.md).
+Use issue forms for reproducible bugs, bounded proposals, and design questions. Discuss security findings through the [private reporting policy](SECURITY.md). We value concrete requirements, readable work, and evidence that survives review.
 
-## Planned stack
+---
 
-React and TypeScript for the web application; React Flow and ELK for the live graph; a persistent Node/Fastify coordinator; a transactional SQLite ledger; resumable event transport; and a native Claude Code adapter. Details and remaining qualification are in the [stack proposal](docs/TECH_STACK.md).
+<p align="center">
+  <img src="docs/assets/lobe/lobehub-color.svg" width="28" height="28" alt="LobeHub icon">
+  <br>
+  Provider marks by <a href="https://github.com/lobehub/lobe-icons"><strong>Lobe Icons</strong></a> · <a href="docs/assets/lobe/SOURCES.json">Pinned source</a> · <a href="docs/assets/lobe/LICENSE">MIT notice</a>
+  <br>
+  Original project material: <a href="LICENSE">Apache-2.0</a> · <a href="NOTICE">Third-party notices</a>
+</p>
 
-<img src="docs/assets/lobe/claude-color.svg" width="20" height="20" alt="Claude icon"> **Claude Code is the first planned runtime.** Model selection will use the operator's authorized model inventory and resource limits. Other runtimes are future adapter decisions.
-
-## Explore the design
-
-- [Charter](docs/CHARTER.md): purpose, authority, and operating boundaries.
-- [Architecture](docs/ARCHITECTURE.md): labs, durable coordination, adapters, and modes.
-- [Web application and remote observability](docs/DASHBOARD.md): live graph, cross-machine tracing, replay, and controls.
-- [Verification](docs/VERIFICATION.md): evidence, trust boundaries, approvals, and recovery.
-- [Roadmap](docs/IMPLEMENTATION_PLAN.md): milestones with measurable exit criteria.
-- [Platform research](docs/PLATFORM_RESEARCH.md): dated findings and unqualified behavior.
-
-## Contribute
-
-Start with [CONTRIBUTING.md](CONTRIBUTING.md), [AGENTS.md](AGENTS.md), and the current milestone. Propose material architecture or authority changes before implementation. Claims of verified behavior need evidence tied to the exact source snapshot.
-
-Use the issue forms for bugs, proposals, and design questions. Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md). Responsibilities and release criteria are in [GOVERNANCE.md](GOVERNANCE.md) and [RELEASING.md](RELEASING.md).
-
-## License and icon credits
-
-Original project material is licensed under [Apache-2.0](LICENSE). Third-party assets retain their licenses; see [NOTICE](NOTICE).
-
-<img src="docs/assets/lobe/lobehub-color.svg" width="20" height="20" alt="LobeHub icon"> AI/provider icons come from [Lobe Icons](https://github.com/lobehub/lobe-icons). Vendored assets include their [MIT license and pinned provenance](docs/assets/lobe/SOURCES.json). Brand names and icons identify integrations and do not imply endorsement.
+Brand names and icons identify planned integrations and do not imply endorsement.

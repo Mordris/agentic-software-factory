@@ -12,7 +12,7 @@ import unittest
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from check_repository import StrictLoader, check_workflow, safe_local_target, valid_subject
+from check_repository import LocalImageLinks, StrictLoader, check_workflow, safe_local_target, valid_subject
 from ci_tools import verified_binary
 
 
@@ -55,6 +55,15 @@ class FoundationBoundaries(unittest.TestCase):
             for target in ["missing.md", "../outside.md", "/etc/passwd"]:
                 with self.assertRaises(ValueError):
                     safe_local_target(root, source, target)
+
+    def test_picture_checks_theme_sources_not_only_fallback(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "README.md"
+            (root / "light.svg").write_text("fixture")
+            LocalImageLinks(root, source).feed('<picture><img src="light.svg"></picture>')
+            with self.assertRaises(ValueError):
+                LocalImageLinks(root, source).feed('<picture><source srcset="missing-dark.svg"><img src="light.svg"></picture>')
 
     def test_workflow_rejects_privilege_and_injection_regressions(self):
         sha = "a" * 40

@@ -1,3 +1,10 @@
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 700px)" srcset="docs/assets/github/conduct-mobile-dark.svg">
+  <source media="(max-width: 700px)" srcset="docs/assets/github/conduct-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/github/conduct-dark.svg">
+  <img src="docs/assets/github/conduct-light.svg" width="100%" alt="">
+</picture>
+
 # Community conduct
 
 Be respectful, specific, and open to correction. Critique designs and behavior rather than people. Support claims with evidence and acknowledge uncertainty.

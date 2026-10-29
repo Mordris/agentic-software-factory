@@ -1,3 +1,10 @@
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 700px)" srcset="docs/assets/github/security-mobile-dark.svg">
+  <source media="(max-width: 700px)" srcset="docs/assets/github/security-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/github/security-dark.svg">
+  <img src="docs/assets/github/security-light.svg" width="100%" alt="">
+</picture>
+
 # Security policy
 
 ## Support
@@ -13,6 +20,13 @@ If private reporting is unavailable, do not post vulnerability details publicly.
 There is no staffed response-time guarantee. The maintainer coordinates reproduction, remediation, affected-version assessment, and disclosure when practical. Credential incidents require rotation/revocation and exposure assessment; deleting a secret does not undo exposure.
 
 ## Boundaries
+
+| Boundary | Requirement |
+| --- | --- |
+| Worker → host | Qualified filesystem, process, network, and resource isolation |
+| Worker → control plane | No access to protected approvals, delivery credentials, or audit records |
+| Result → readiness | Exact-snapshot evidence and independent required checks |
+| Readiness → publication | A distinct approval for the exact external action |
 
 Treat target repositories, scripts, model output, messages, logs, and artifacts as untrusted. Keep approval authority, delivery credentials, and audit records outside worker-writable paths. Use synthetic data and qualified isolation. A worktree or tool allowlist alone is not a sandbox.
 

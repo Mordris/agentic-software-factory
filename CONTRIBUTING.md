@@ -1,8 +1,22 @@
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 700px)" srcset="docs/assets/github/contributing-mobile-dark.svg">
+  <source media="(max-width: 700px)" srcset="docs/assets/github/contributing-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/github/contributing-dark.svg">
+  <img src="docs/assets/github/contributing-light.svg" width="100%" alt="">
+</picture>
+
 # Contributing
 
 The project is in its repository-foundation stage. Runtime and dashboard work follow [the bounded milestones](docs/IMPLEMENTATION_PLAN.md); a design is not an implemented control.
 
 ## Scope the work
+
+| Step | Bring to review |
+| --- | --- |
+| Scope | A concrete problem, current ownership, and bounded acceptance criteria |
+| Change | A focused diff with explicit compatibility and authority impact |
+| Prove | Reproducible checks tied to the exact source snapshot |
+| Review | Honest gaps, clear decisions, and a concrete delivery preview |
 
 Read [AGENTS.md](AGENTS.md), the relevant design, existing issues/PRs, and nested instructions. Propose material scope, protocol, trust-boundary, dependency, or model-routing changes before implementation. Check current ownership. Small corrections can go directly to a focused PR.
 
@@ -30,6 +44,19 @@ These check repository policy, local document links, forms/configuration, workfl
 Follow the operator's resource and installation constraints. Do not install tools or start services merely to satisfy this document. Record a blocked check when its environment is unavailable.
 
 ## Review and delivery
+
+### Visual documentation
+
+The README and field-guide artwork share a tokenized SVG source in `scripts/generate_docs_assets.py`. It produces separate light/dark and mobile/desktop layouts with embedded, pinned Lobe Icons marks. No font service or browser script is needed to display the artwork.
+
+```sh
+python3 scripts/generate_docs_assets.py
+python3 scripts/generate_docs_assets.py --check
+```
+
+Check GitHub-rendered Markdown, both themes, and narrow layouts when changing the design. Preserve text alternatives and the third-party notices. Foundation CI rejects stale artwork or missing image/theme-source paths.
+
+### Evidence and publication
 
 Failed, missing, stale, skipped, or canceled required checks block readiness. Tie evidence to the current snapshot and distinguish executed checks from reviewed reports. Review workflow, dependency, policy, and runner changes as security-sensitive code. New behavior needs tests that discriminate it from plausible wrong behavior; trivial docs edits do not need implementation-mirroring tests.
 
