@@ -6,9 +6,11 @@ This is the proposed plan, revised to include a live dashboard and remote execut
 
 Deliver the charter, architecture, authority/verification requirements, platform research, and phased plan. Establish honest pre-alpha documentation, Apache-2.0 licensing, contribution/release/security policies, issue and PR templates, labels/settings, protected branches/tags, and hardened foundation CI. Qualify the CI on its actual pushed revision before claiming it operational. Model access is selected: the operator's Claude Code subscription and its available authorized Claude models. Confirm resource limits and which isolation environment can be used after machine cleanup. Review the plan through Headquarters.
 
-Exit: the operator approves a bounded first implementation milestone and its resource envelope. Current state: public repository created; foundation is being prepared locally. Runtime implementation approval is pending.
+Exit: the operator approves a bounded first implementation milestone and its resource envelope. Current state: the public foundation and visual documentation are published and qualified on their revisions. The [Phase 1 implementation brief](milestones/PHASE_1_CORE.md), [acceptance matrix](milestones/PHASE_1_ACCEPTANCE.md), and [candidate dependency inventory](milestones/phase-1-dependencies.json) are prepared for review. Runtime implementation approval is pending.
 
 ## Phase 1 — Core contracts and durable state
+
+Review the [bounded Phase 1 brief](milestones/PHASE_1_CORE.md) before implementation. It defines the shared latest-stable version policy, compatibility entry gates, resource envelope, staged work, and a two-mission restart/cancellation/rework demonstration. Its [acceptance matrix](milestones/PHASE_1_ACCEPTANCE.md) makes the exit criteria below testable. The brief is not an approval or a qualification result.
 
 Implement the smallest useful CLI and persistent task ledger: plans, tasks, lab identities, dependencies, message envelopes, leases, idempotency, cancellation, approvals, evidence references, and audit events. Include stable machine/attempt identities, producer sequences, a transactional event outbox, and snapshot/cursor replay. Define the eight lab contracts and the shared protocol, with actual inputs, deliverables, capability limits, and escalation criteria. Version the boundary schemas.
 
@@ -89,4 +91,4 @@ An executable supported release requires a reviewed threat model, repeatable set
 - Initial maximum spend/usage, concurrent workers, wall time, test resource limits, and artifact retention.
 - Available execution isolation once machine cleanup is complete.
 - Coordinator/worker machines, SSH access and forwarding policy, session lifetime, and the approved service lifecycle for the first remote run.
-- Approval of Phase 1 and its implementation technology. Later phases require their own bounded rollout plans.
+- Approval of the bounded Phase 1 brief, shared technology pins/qualification gates, and resource envelope. Later phases require their own bounded rollout plans.

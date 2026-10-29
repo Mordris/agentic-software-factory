@@ -2,6 +2,8 @@
 
 Status: recommendation for the first implementation, researched 29 October 2026. No packages have been installed, compatibility tests run, or services deployed. Exact versions and the database driver remain subject to qualification and a committed lockfile.
 
+Update, 30 October 2026: the operator requires the latest stable releases with exact pins and identical shared project versions in CI and the application. The [Phase 1 brief](milestones/PHASE_1_CORE.md) and [candidate inventory](milestones/phase-1-dependencies.json) define the first selection, a canonical toolchain/catalog/lockfile policy, and actual SQLite/Python compatibility gaps. Refresh versions at implementation entry and before delivery. The web and adapter choices below are deferred; select their latest stable versions when those milestones begin rather than treating this dated proposal as a version lock.
+
 ## Recommended stack
 
 | Layer | Choice | Purpose in this factory |
