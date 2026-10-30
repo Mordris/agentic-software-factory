@@ -70,7 +70,7 @@ See the [architecture](docs/ARCHITECTURE.md), [verification requirements](docs/V
 
 **Today:** repository foundation plus an experimental TypeScript coordinator, transactional SQLite ledger, scoped approvals, bounded concurrent scheduling, evidence gates and a foreground fixture CLI. A real process restart demonstration is available locally. **Still ahead:** hosted core CI qualification, the web application, live runtime adapter, isolated execution and supported releases. Each milestone has [measurable exit criteria](docs/IMPLEMENTATION_PLAN.md).
 
-The proposed CI extension adds core quality, core qualification and full dependency review to foundation checks. Hosted execution of this extension is pending publication approval. Foundation checks cover source/configuration, tooling regressions, workflow security, secrets and static analysis. A green foundation check does not establish runtime safety, agent correctness, or production readiness. [CI scope →](docs/CI.md)
+Core CI adds quality, qualification and full dependency review to foundation checks. Hosted results and current follow-up work are recorded in the [qualification report](docs/milestones/PHASE_1_QUALIFICATION.md). Foundation checks cover source/configuration, tooling regressions, workflow security, secrets and static analysis. A green foundation check does not establish runtime safety, agent correctness, or production readiness. [CI scope →](docs/CI.md)
 
 ## The first runtime, deliberately scoped
 

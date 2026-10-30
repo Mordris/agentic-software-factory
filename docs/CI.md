@@ -53,7 +53,7 @@ CodeQL receives only a locally downloaded tarball whose canonical SHA-256 is ver
 
 The staged core jobs are Core quality, Core qualification and Dependency review, implemented through scripts/ci_core.py. All five mandatory job results must succeed; foundation tests enumerate 3,125 combinations including absent results. The shared recipes explicitly install frozen pnpm dependencies with hooks disabled, build the exact SQLite engine, validate runtime/catalog/lock parity, check strict production/test types, enforce Biome formatting, and run actual core tests and the process restart demonstration. Full lockfile advisory/license review fails closed on missing graph or service results.
 
-These source changes have only local evidence. Hosted Ubuntu 26.04 compatibility, all new check contexts and ruleset updates require separate publication/admin approval and actual run readback. No live model, subscription credential or Claude trial runs in CI.
+The first hosted run is recorded in the Phase 1 qualification report: all CodeQL analysis jobs completed, JavaScript reported two patch-key findings, and the repository gate rejected a reproducible wheel-permission mismatch. The local follow-up fixes remain subject to a new approved push and hosted run. Ruleset updates still require separate admin approval and actual context readback. No live model, subscription credential or Claude trial runs in CI.
 
 The narrow actionlint filter covers only its unknown Ubuntu 26.04 diagnostic. GitHub's official image list was checked on 30 October 2026; the repository validator still rejects any different runner label, including self-hosted runners. No security audit finding is ignored.
 
