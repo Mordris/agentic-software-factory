@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-10-29",
+  "checked_at": "2026-10-30",
   "actions": [
     {
       "repository": "actions/checkout",
@@ -14,8 +14,7 @@
     },
     {
       "repository": "github/codeql-action",
-      "ref": "v4",
-      "tag_object": "793b778da9c9275a0f276522b27cb5fc14bba279",
+      "ref": "v4.39.1",
       "commit": "9b3254085494b55a0f7c4c2b3d2d52cc712ce370"
     }
   ]

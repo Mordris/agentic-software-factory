@@ -1,0 +1,38 @@
+packages:
+  - 'packages/*'
+  - 'apps/*'
+catalog:
+  "@biomejs/biome": "2.6.4"
+  "@types/better-sqlite3": "9.6.0"
+  "@types/node": "26.6.6"
+  "@vitest/coverage-v8": "5.0.5"
+  "ajv": "8.20.0"
+  "better-sqlite3": "13.0.3"
+  "fast-check": "4.10.2"
+  "node-gyp": "13.1.0"
+  "typebox": "1.4.3"
+  "typescript": "7.0.2"
+  "vite": "8.3.5"
+  "vitest": "5.0.5"
+  "yaml": "2.9.1"
+engineStrict: true
+saveExact: true
+ignoreScripts: true
+strictDepBuilds: true
+blockExoticSubdeps: true
+minimumReleaseAge: 1440
+trustPolicy: no-downgrade
+storeDir: .factory/pnpm-store
+cacheDir: .factory/pnpm-cache
+minimumReleaseAgeExclude:
+  - "@biomejs/biome@2.6.4"
+  - "@biomejs/cli-linux-x64@2.6.4"
+  - "@biomejs/cli-win32-x64@2.6.4"
+  - "@biomejs/cli-darwin-x64@2.6.4"
+  - "@biomejs/cli-android-x64@2.6.4"
+  - "@biomejs/cli-linux-arm64@2.6.4"
+  - "@biomejs/cli-win32-arm64@2.6.4"
+  - "@biomejs/cli-darwin-arm64@2.6.4"
+  - "@biomejs/cli-android-arm64@2.6.4"
+  - "@biomejs/cli-linux-x64-musl@2.6.4"
+  - "@biomejs/cli-linux-arm64-musl@2.6.4"

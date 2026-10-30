@@ -244,8 +244,8 @@ def principles(theme, mobile=False):
 
 def roadmap(theme, mobile=False):
     a = Art(440 if mobile else 1200, 730 if mobile else 246, theme, 'An honest development roadmap',
-            'Repository foundation and CI exist. Durable core, visual Headquarters, Claude adapter, and a qualified preview remain planned milestones.')
-    stages = [('Repository', 'foundation', 'CI + policies', True), ('Durable', 'core', 'State + concurrency', False),
+            'Repository foundation and a local simulated durable core exist. Visual Headquarters, the full Claude adapter, and a qualified preview remain planned milestones.')
+    stages = [('Repository', 'foundation', 'CI + policies', True), ('Local', 'core', 'State + concurrency', True),
               ('Visual', 'Headquarters', 'Graph + recovery', False), ('Claude', 'adapter', 'Qualified execution', False),
               ('Qualified', 'preview', 'Evidence + release gates', False)]
     for i, (first, second, detail, done) in enumerate(stages):

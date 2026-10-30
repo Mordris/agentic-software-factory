@@ -54,6 +54,10 @@ StrictLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, uni
 
 
 def load_yaml(path):
+    if path.name == "pnpm-lock.yaml":
+        documents = list(yaml.load_all(path.read_text(), Loader=StrictLoader))
+        require(len(documents) == 2 and all(isinstance(document, dict) for document in documents), "Expected both pinned lockfile documents")
+        return documents
     return yaml.load(path.read_text(), Loader=StrictLoader)
 
 
@@ -73,7 +77,7 @@ def check_workflow(workflow, pins, name):
                     f"{name}: required checks must not use path filtering")
     require("concurrency" in workflow, f"{name}: concurrency group required")
     for job_id, job in workflow["jobs"].items():
-        require(job.get("runs-on") == "ubuntu-24.04", f"{name}/{job_id}: reviewed hosted runner required")
+        require(job.get("runs-on") == "ubuntu-26.04", f"{name}/{job_id}: reviewed explicit hosted runner required")
         require(1 <= job.get("timeout-minutes", 0) <= 30, f"{name}/{job_id}: bounded timeout required")
         require(not job.get("continue-on-error", False), f"{name}/{job_id}: failures must propagate")
         permissions = job.get("permissions", {})

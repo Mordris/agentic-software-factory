@@ -1,0 +1,9 @@
+# actionlint 1.7.12 predates GitHub's listed Ubuntu 26.04 hosted label.
+# https://github.com/actions/runner-images#available-images
+# The independent repository validator requires this exact label and rejects
+# self-hosted/custom/unknown runners. This narrow filter removes only the stale
+# built-in inventory diagnostic; no workflow-security finding is waived.
+paths:
+  .github/workflows/*.yml:
+    ignore:
+      - '^label "ubuntu-26\.04" is unknown\.'

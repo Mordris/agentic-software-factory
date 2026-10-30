@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="730" viewBox="0 0 440 730" role="img" aria-labelledby="title desc">
-<title id="title">An honest development roadmap</title><desc id="desc">Repository foundation and CI exist. Durable core, visual Headquarters, Claude adapter, and a qualified preview remain planned milestones.</desc>
+<title id="title">An honest development roadmap</title><desc id="desc">Repository foundation and a local simulated durable core exist. Visual Headquarters, the full Claude adapter, and a qualified preview remain planned milestones.</desc>
 <!-- Lobe Icons marks: MIT; see ../lobe/LICENSE and ../lobe/SOURCES.json. -->
 <defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#293B50" opacity=".48"/></pattern><linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#78E7D3" stop-opacity=".12"/><stop offset="1" stop-color="#A8BEFF" stop-opacity=".02"/></linearGradient></defs>
 <style>text{font-family:"Segoe UI",Arial,sans-serif} .mono{font-family:Consolas,monospace}</style>
@@ -12,11 +12,11 @@
 <text x="38" y="88" font-size="24" font-weight="600" fill="#F0F5FC">Repository</text>
 <text x="38" y="117" font-size="24" font-weight="600" fill="#F0F5FC">foundation</text>
 <text x="210" y="117" font-size="16" font-weight="400" fill="#A4B6CA">CI + policies</text>
-<rect x="20" y="166" width="400" height="124" rx="14" fill="#121D2B" stroke="#293B50"/>
-<text x="38" y="194" font-size="12" font-weight="600" fill="#A4B6CA" letter-spacing="1">02</text>
-<rect x="309" y="178" width="97" height="28" rx="7" fill="#182738"/>
-<text x="321" y="197" font-size="16" font-weight="600" fill="#A4B6CA">PLANNED</text>
-<text x="38" y="230" font-size="24" font-weight="600" fill="#F0F5FC">Durable</text>
+<rect x="20" y="166" width="400" height="124" rx="14" fill="#121D2B" stroke="#78E7D3"/>
+<text x="38" y="194" font-size="12" font-weight="600" fill="#78E7D3" letter-spacing="1">02</text>
+<rect x="309" y="178" width="97" height="28" rx="7" fill="#173E3C"/>
+<text x="321" y="197" font-size="16" font-weight="600" fill="#78E7D3">PRESENT</text>
+<text x="38" y="230" font-size="24" font-weight="600" fill="#F0F5FC">Local</text>
 <text x="38" y="259" font-size="24" font-weight="600" fill="#F0F5FC">core</text>
 <text x="210" y="259" font-size="16" font-weight="400" fill="#A4B6CA">State + concurrency</text>
 <rect x="20" y="308" width="400" height="124" rx="14" fill="#121D2B" stroke="#293B50"/>

@@ -2,6 +2,7 @@
 import copy
 import hashlib
 import io
+import itertools
 from pathlib import Path
 import sys
 import subprocess
@@ -37,14 +38,12 @@ class FoundationBoundaries(unittest.TestCase):
         source = Path(__file__).resolve().parents[1] / ".github/workflows/ci.yml"
         workflow = yaml.load(source.read_text(), Loader=StrictLoader)
         gate = workflow["jobs"]["gate"]
-        self.assertEqual(set(gate["needs"]), {"foundation", "workflow-security"})
+        self.assertEqual(set(gate["needs"]), {"foundation", "workflow-security", "core-quality", "core-qualification", "dependency-review"})
         script = gate["steps"][0]["run"]
-        for first in ["success", "failure", "cancelled", "skipped"]:
-            for second in ["success", "failure", "cancelled", "skipped"]:
-                result = subprocess.run(["bash", "-eo", "pipefail", "-c", script],
-                                        env={"FOUNDATION_RESULT": first, "SECURITY_RESULT": second},
-                                        capture_output=True, timeout=2)
-                self.assertEqual(result.returncode == 0, first == second == "success")
+        names = ["FOUNDATION_RESULT", "SECURITY_RESULT", "QUALITY_RESULT", "QUALIFICATION_RESULT", "DEPENDENCIES_RESULT"]
+        for results in itertools.product(["success", "failure", "cancelled", "skipped", ""], repeat=5):
+            result = subprocess.run(["bash", "-eo", "pipefail", "-c", script], env=dict(zip(names, results)), capture_output=True, timeout=2)
+            self.assertEqual(result.returncode == 0, all(value == "success" for value in results))
 
     def test_links_reject_missing_files_and_escape(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -68,13 +67,16 @@ class FoundationBoundaries(unittest.TestCase):
     def test_workflow_rejects_privilege_and_injection_regressions(self):
         sha = "a" * 40
         workflow = {"permissions": {}, "on": {"pull_request": {}}, "concurrency": "fixture",
-                    "jobs": {"check": {"runs-on": "ubuntu-24.04", "timeout-minutes": 2,
+                    "jobs": {"check": {"runs-on": "ubuntu-26.04", "timeout-minutes": 2,
                                        "permissions": {"contents": "read"},
                                        "steps": [{"uses": "actions/checkout@" + sha,
                                                   "with": {"persist-credentials": False}}]}}}
         pins = {"actions/checkout": sha}
         check_workflow(workflow, pins, "ci.yml")
         mutations = [
+            lambda w: w["jobs"]["check"].update({"runs-on": "self-hosted"}),
+            lambda w: w["jobs"]["check"].update({"runs-on": "ubuntu-latest"}),
+            lambda w: w["jobs"]["check"].update({"runs-on": "ubuntu-24.04"}),
             lambda w: w["on"].update({"pull_request_target": {}}),
             lambda w: w["jobs"]["check"]["permissions"].update({"contents": "write"}),
             lambda w: w["jobs"]["check"].update({"continue-on-error": True}),

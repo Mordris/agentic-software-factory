@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-10-30",
+  "status": "proposed latest-stable selection; not installed, built, or qualified",
+  "refresh_before": [
+    "implementation setup",
+    "publication review"
+  ],
+  "version_policy": {
+    "direct_choices": "latest stable official releases, exact pins; no moving runtime/package aliases",
+    "transitive_choices": "one resolved, integrity-locked graph within upstream compatibility constraints; complete advisory/license review required",
+    "shared_versions": "canonical project toolchain and workspace catalog; local, CI, tests and application verify the same selected versions",
+    "host_image": "explicit newest qualified available hosted label; record actual image and native compiler identity; no immutable-host claim"
+  },
+  "runtimes": {
+    "node": {
+      "version": "26.13.0",
+      "source": "https://nodejs.org/dist/index.json",
+      "release": "https://nodejs.org/en/blog/release/v26.13.0",
+      "platform_candidate": "linux-x64",
+      "archive": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-linux-x64.tar.xz",
+      "sha256": "d28a96af6c38596f6d9d97c0ee531c13d238d757742387d1928de822d959e997"
+    },
+    "python": {
+      "version": "3.15.2",
+      "release": "https://www.python.org/downloads/release/python-3152/",
+      "distribution_status": "exact local/CI binary provenance, platform compatibility, and project-private setup require entry qualification"
+    },
+    "sqlite": {
+      "version": "3.54.1",
+      "release": "https://sqlite.org/releaselog/3_54_1.html",
+      "archive": "https://sqlite.org/2026/sqlite-amalgamation-3540100.zip",
+      "bytes": 2990966,
+      "sha3_256": "92281c86e2957f9b9305890f9ac04204caa7b677cc868dc326d942689df28e30",
+      "driver_bundled_version": "3.53.4",
+      "status": "requires qualified explicit latest-source build; bundled/system fallback prohibited"
+    }
+  },
+  "npm": [
+    {
+      "package": "@biomejs/biome",
+      "version": "2.6.4",
+      "registry": "https://registry.npmjs.org/@biomejs/biome/2.6.4",
+      "integrity": "sha512-8sKKwaNW4ot22awZ3lBjwWLHnUFXgXnrBPYS2gNlBAXRbDC++7kqjK2H7dR/FgCDtPvO1xfKpgEhJkGxAKYkxA==",
+      "tarball": "https://registry.npmjs.org/@biomejs/biome/-/biome-2.6.4.tgz",
+      "license": "MIT OR Apache-2.0",
+      "engines": {
+        "node": ">=14.21.3"
+      },
+      "metadata_sha256": "aaaa004a02a3e0ebe3368bb7355b44d95abfad11395135f0d346e6b24843ea0a",
+      "use": "development"
+    },
+    {
+      "package": "@types/better-sqlite3",
+      "version": "9.6.0",
+      "registry": "https://registry.npmjs.org/@types/better-sqlite3/9.6.0",
+      "integrity": "sha512-ZEEwBSgMu7GYJOynoagg5X9JbxfL6dTJDsgViJIqh67jV44kyOr9RXfmFjLK5rzC4MWssP06t9hu/JwGDnUbCg==",
+      "tarball": "https://registry.npmjs.org/@types/better-sqlite3/-/better-sqlite3-9.6.0.tgz",
+      "license": "MIT",
+      "engines": null,
+      "metadata_sha256": "bf9ddc93746d25f69518a4322719459bbe3dd917a3512a0e0b86ad191e56129d",
+      "use": "development"
+    },
+    {
+      "package": "@types/node",
+      "version": "26.6.6",
+      "registry": "https://registry.npmjs.org/@types/node/26.6.6",
+      "integrity": "sha512-MzQj+8Kx3XI40OmUAE6Qoh58ZMNstNNMwn2nfd3qWsfe7nDNSqJNzes4njhz6AHwrSHOffSLwXU6yb474Q4aog==",
+      "tarball": "https://registry.npmjs.org/@types/node/-/node-26.6.6.tgz",
+      "license": "MIT",
+      "engines": null,
+      "metadata_sha256": "b1295e1ad30abafc4ed137319ebb5d472118e0e08b5725569edee4579df7da7a",
+      "use": "development"
+    },
+    {
+      "package": "@vitest/coverage-v8",
+      "version": "5.0.5",
+      "registry": "https://registry.npmjs.org/@vitest/coverage-v8/5.0.5",
+      "integrity": "sha512-4KpkGdIrSqBihx/JyP/e+S+IKB98etg1XDQiLAxksLfcShnwi1VReGeOT9NI43hLHbknosKp/1CCLn9Zgcs8mg==",
+      "tarball": "https://registry.npmjs.org/@vitest/coverage-v8/-/coverage-v8-5.0.5.tgz",
+      "license": "MIT",
+      "engines": null,
+      "metadata_sha256": "7a3838e657d4ee022bd29506eb20e7f14a300424da044227a97faf551e097ed8",
+      "use": "development"
+    },
+    {
+      "package": "ajv",
+      "version": "8.20.0",
+      "registry": "https://registry.npmjs.org/ajv/8.20.0",
+      "integrity": "sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==",
+      "tarball": "https://registry.npmjs.org/ajv/-/ajv-8.20.0.tgz",
+      "license": "MIT",
+      "engines": null,
+      "metadata_sha256": "da1e811c437dcaed32870e5023e0a1fc6e672027023a0648fddfbc122fb84c58",
+      "use": "runtime"
+    },
+    {
+      "package": "better-sqlite3",
+      "version": "13.0.3",
+      "registry": "https://registry.npmjs.org/better-sqlite3/13.0.3",
+      "integrity": "sha512-RbOBxmLBG8uvFUc15X9+9SFemKcQ0WBuISBVkpuiaUB2qblC8UWlHEjdWVoZ8AdhSwmoEgsiXKfopX0CQxaACQ==",
+      "tarball": "https://registry.npmjs.org/better-sqlite3/-/better-sqlite3-13.0.3.tgz",
+      "license": "MIT",
+      "engines": {
+        "node": ">=22"
+      },
+      "metadata_sha256": "8730045f9578bcb32c9e84eebebaca59c7373f8e1b47d56a40aa4c743ce0b95b",
+      "use": "runtime"
+    },
+    {
+      "package": "drizzle-kit",
+      "version": "0.31.11",
+      "registry": "https://registry.npmjs.org/drizzle-kit/0.31.11",
+      "integrity": "sha512-YCYqxTLIB2OCqf6w9/Vef13baBVbwQIPcbT4Y56AfO6B9ajZhDhD8Jkveg/hJvT/iuMloKD/IYYkyMMNhr7Kqg==",
+      "tarball": "https://registry.npmjs.org/drizzle-kit/-/drizzle-kit-0.31.11.tgz",
+      "license": "MIT",
+      "engines": null,
+      "metadata_sha256": "73690af6b33e596e3ab789edadb7c54fd711374e9d8b9fcc4992befc298368e6",
+      "use": "development"
+    },
+    {
+      "package": "drizzle-orm",
+      "version": "0.45.4",
+      "registry": "https://registry.npmjs.org/drizzle-orm/0.45.4",
+      "integrity": "sha512-NiM1YZpJ2UxyeE67DpDDZ+Tsw4YLX3trSlkNT7Tm9eKoUNb1LvaAaQzXgYQsWs+AQ9TUmmwMmBOCXuqqxUWKKQ==",
+      "tarball": "https://registry.npmjs.org/drizzle-orm/-/drizzle-orm-0.45.4.tgz",
+      "license": "Apache-2.0",
+      "engines": null,
+      "metadata_sha256": "516d3f7794bccc29e6edfbd339828fa534e26f3be22dd35a9f21fe95ed975b44",
+      "use": "runtime"
+    },
+    {
+      "package": "fast-check",
+      "version": "4.10.2",
+      "registry": "https://registry.npmjs.org/fast-check/4.10.2",
+      "integrity": "sha512-iK2f+YrcmoeGqk6fA0ea2bptcu/itMIm4NfEozq6N25+aG6h7s5HZbB/k1aV7b5w5sFLMCbbtRUsTVR+BgC3xw==",
+      "tarball": "https://registry.npmjs.org/fast-check/-/fast-check-4.10.2.tgz",
+      "license": "MIT",
+      "engines": {
+        "node": ">=12.17.0"
+      },
+      "metadata_sha256": "abdbc7920f2faa3ee51ee42bd1e95d4dc6d6cc6d84ca33d2e2eebe652419bf1b",
+      "use": "development"
+    },
+    {
+      "package": "node-gyp",
+      "version": "13.1.0",
+      "registry": "https://registry.npmjs.org/node-gyp/13.1.0",
+      "integrity": "sha512-FpNzOLFACKG0oRBYbZ5WOeWD1EqRTIWX90MaRIWTO18lVYPx8fqIjrdS3pihjnCkSmgop6zVGkSqg1vXZLksuw==",
+      "tarball": "https://registry.npmjs.org/node-gyp/-/node-gyp-13.1.0.tgz",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+      },
+      "metadata_sha256": "dfd09d37888769b5b3691f35144d7e53e87724461b84c538952df8f80b888aa9",
+      "use": "development"
+    },
+    {
+      "package": "pnpm",
+      "version": "12.16.1",
+      "registry": "https://registry.npmjs.org/pnpm/12.16.1",
+      "integrity": "sha512-CR0d7nknV1Zhsl2rPCrjHK/BxU1rce1qZgDPDByxBDSkR+rhQBXxsj4ua+3u1535SpMuIWTSgyKA3OP7MvZW0Q==",
+      "tarball": "https://registry.npmjs.org/pnpm/-/pnpm-12.16.1.tgz",
+      "license": "MIT",
+      "engines": {
+        "node": ">=18"
+      },
+      "metadata_sha256": "e28d651fdbf8134e0829356172881862bebff6776dfb5d122ff5d0a3e4a16d15",
+      "use": "package-manager"
+    },
+    {
+      "package": "typebox",
+      "version": "1.4.3",
+      "registry": "https://registry.npmjs.org/typebox/1.4.3",
+      "integrity": "sha512-u3nyf7ZciAv1GOijVpI0TDt9At5wmEi7lSHSlRrnjuThv1DcB7fgGBqqrz+fGZ54jAfTpOOX0JXwxSIg3pnxQA==",
+      "tarball": "https://registry.npmjs.org/typebox/-/typebox-1.4.3.tgz",
+      "license": "MIT",
+      "engines": null,
+      "metadata_sha256": "1409db9d1c1767f69c5d9190037fa55295fa40003c7e98a9896fcfc3d4855e7b",
+      "use": "runtime"
+    },
+    {
+      "package": "typescript",
+      "version": "7.0.2",
+      "registry": "https://registry.npmjs.org/typescript/7.0.2",
+      "integrity": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==",
+      "tarball": "https://registry.npmjs.org/typescript/-/typescript-7.0.2.tgz",
+      "license": "Apache-2.0",
+      "engines": {
+        "node": ">=16.20.0"
+      },
+      "metadata_sha256": "28a8ef314c6bbc3fddb831088f80eb2fcac6351cb618c8ac029f7229f587b8aa",
+      "use": "development"
+    },
+    {
+      "package": "vite",
+      "version": "8.3.5",
+      "registry": "https://registry.npmjs.org/vite/8.3.5",
+      "integrity": "sha512-z1YpjieJ9g0ebTmQpLBv/oq9E3F9EIlOe+7LahW8SrE3LTiG3udBRUXQOlYXP9b+IC2q2phHeVxj9xGlw34OEQ==",
+      "tarball": "https://registry.npmjs.org/vite/-/vite-8.3.5.tgz",
+      "license": "MIT",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      },
+      "metadata_sha256": "ba34bc2cd5e3e2c14de8d81d000e5596d4c110aab59b723c8b9bdb175df78723",
+      "use": "development"
+    },
+    {
+      "package": "vitest",
+      "version": "5.0.5",
+      "registry": "https://registry.npmjs.org/vitest/5.0.5",
+      "integrity": "sha512-cPODOMF8YnkiiYtDdHo6n4wWmBrOBBbOIYH2d33M4l3CdNn72h+qMmO6uXffUN6A5AZFXNND/d+krS9mgkXRfg==",
+      "tarball": "https://registry.npmjs.org/vitest/-/vitest-5.0.5.tgz",
+      "license": "MIT",
+      "engines": {
+        "node": "^22.12.0 || ^24.0.0 || >=26.0.0"
+      },
+      "metadata_sha256": "161da05d413b8aca31ebb7763625d66086cb47057057f00d24d69147a343ef62",
+      "use": "development"
+    },
+    {
+      "package": "yaml",
+      "version": "2.9.1",
+      "registry": "https://registry.npmjs.org/yaml/2.9.1",
+      "integrity": "sha512-3NxN8+78OdzbT7C/WjGsyfPAtJaN3FNDsWxv7Y7mcDsT/oOmgW8BpyQQFFBnvZE3j9Y2Sdz1ULFLezL7Eb2yFw==",
+      "tarball": "https://registry.npmjs.org/yaml/-/yaml-2.9.1.tgz",
+      "license": "ISC",
+      "engines": {
+        "node": ">= 14.6"
+      },
+      "metadata_sha256": "3ace3f8ec5fc9a5784603960fd107d9a9f172d1d74d66c32dfd6a739512a7b24",
+      "use": "development"
+    }
+  ],
+  "python_tooling": [
+    {
+      "package": "PyYAML",
+      "version": "6.0.3",
+      "source": "https://pypi.org/pypi/PyYAML/6.0.3/json",
+      "declared_license": "MIT",
+      "artifacts": [
+        {
+          "file": "pyyaml-6.0.3.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz",
+          "sha256": "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f",
+          "type": "sdist"
+        }
+      ]
+    },
+    {
+      "package": "pip",
+      "version": "26.2.2",
+      "source": "https://pypi.org/pypi/pip/26.2.2/json",
+      "declared_license": "MIT",
+      "artifacts": [
+        {
+          "file": "pip-26.2.2-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/3f/06/3e4420302363fbb71be3c7f35ce042f54bfca330e3e66b3a2e3c4cca579f/pip-26.2.2-py3-none-any.whl",
+          "sha256": "fd7f4dfa8190e014013b9f08f3e973f4e4c26ffd179a204895533a7254813a70",
+          "type": "bdist_wheel"
+        },
+        {
+          "file": "pip-26.2.2.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz",
+          "sha256": "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f",
+          "type": "sdist"
+        }
+      ]
+    },
+    {
+      "package": "setuptools",
+      "version": "84.2.1",
+      "source": "https://pypi.org/pypi/setuptools/84.2.1/json",
+      "declared_license": "MIT",
+      "artifacts": [
+        {
+          "file": "setuptools-84.2.1-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/ef/55/6dc6d6bb953bdfc52519a0059592c52b6e3b8ad51cf8256dffceb55b0610/setuptools-84.2.1-py3-none-any.whl",
+          "sha256": "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2",
+          "type": "bdist_wheel"
+        },
+        {
+          "file": "setuptools-84.2.1.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz",
+          "sha256": "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc",
+          "type": "sdist"
+        }
+      ]
+    },
+    {
+      "package": "wheel",
+      "version": "0.48.0",
+      "source": "https://pypi.org/pypi/wheel/0.48.0/json",
+      "declared_license": "MIT",
+      "artifacts": [
+        {
+          "file": "wheel-0.48.0-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/2e/29/69cfbb602cd91690c55d38ba9fe53e6a7e76a6fa647bf38f19c138d25449/wheel-0.48.0-py3-none-any.whl",
+          "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab",
+          "type": "bdist_wheel"
+        },
+        {
+          "file": "wheel-0.48.0.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz",
+          "sha256": "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322",
+          "type": "sdist"
+        }
+      ]
+    },
+    {
+      "package": "Cython",
+      "version": "3.3.0",
+      "source": "https://pypi.org/pypi/Cython/3.3.0/json",
+      "declared_license": "Apache-2.0",
+      "artifacts": [
+        {
+          "file": "cython-3.3.0-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/bf/77/67b0b24e45073a699610e50f00c18474ff9b09ea29ecc95083bdf5e60acd/cython-3.3.0-py3-none-any.whl",
+          "sha256": "9b24b5c8cd536946b62086fcafee6d5509d3f549f72d553d2336af87ffbe0da1",
+          "type": "bdist_wheel"
+        },
+        {
+          "file": "cython-3.3.0.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz",
+          "sha256": "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8",
+          "type": "sdist"
+        }
+      ]
+    }
+  ],
+  "github_actions": [
+    {
+      "repository": "actions/checkout",
+      "version": "v7.0.1",
+      "commit": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "source": "https://api.github.com/repos/actions/checkout/git/commits/3d3c42e5aac5ba805825da76410c181273ba90b1"
+    },
+    {
+      "repository": "actions/setup-python",
+      "version": "v7.1.0",
+      "commit": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+      "source": "https://api.github.com/repos/actions/setup-python/git/commits/6d4fd22b20465ccc0f7354476588e8df7c9ca0e0"
+    },
+    {
+      "repository": "github/codeql-action",
+      "version": "v4.39.1",
+      "commit": "9b3254085494b55a0f7c4c2b3d2d52cc712ce370",
+      "source": "https://api.github.com/repos/github/codeql-action/git/commits/9b3254085494b55a0f7c4c2b3d2d52cc712ce370"
+    },
+    {
+      "repository": "actions/setup-node",
+      "version": "v7.1.0",
+      "commit": "949feb2413d6458794dcd2491c4babbbce0c15c1",
+      "source": "https://api.github.com/repos/actions/setup-node/git/commits/949feb2413d6458794dcd2491c4babbbce0c15c1"
+    }
+  ],
+  "audit_tools": {
+    "actionlint": {
+      "version": "1.7.12",
+      "repository": "rhysd/actionlint",
+      "url": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz",
+      "sha256": "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8",
+      "executable": "actionlint"
+    },
+    "zizmor": {
+      "version": "1.31.1",
+      "repository": "zizmorcore/zizmor",
+      "url": "https://github.com/zizmorcore/zizmor/releases/download/v1.31.1/zizmor-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "d185f726bdaf92df78273217dfdd24ebcd6b0ef48cf3ce776ff5762b6e138c99",
+      "executable": "zizmor"
+    },
+    "gitleaks": {
+      "version": "8.30.1",
+      "repository": "gitleaks/gitleaks",
+      "url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz",
+      "sha256": "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb",
+      "executable": "gitleaks"
+    }
+  },
+  "hosted_runner_candidate": {
+    "label": "ubuntu-26.04",
+    "source": "https://github.com/actions/runner-images#available-images",
+    "status": "unqualified; current workflows remain ubuntu-24.04 until migration passes"
+  },
+  "advisory_review": {
+    "service": "https://api.osv.dev/v1/querybatch",
+    "queried_exact_packages": 21,
+    "returned_vulnerability_records": 0,
+    "scope": "16 direct npm choices and five Python choices; unresolved transitive graph not covered",
+    "meaning": "dated response, not proof of absence or source/binary safety"
+  },
+  "qualification_gates": [
+    "Refresh stable versions; validate latest selected packages, registry provenance, licenses and full transitive lockfile; do not install moving latest aliases.",
+    "Qualify TypeScript native compiler/platform dependencies, TypeBox JSON-only schema dialect and Ajv validation under the selected Node.",
+    "Qualify latest SQLite source with better-sqlite3; record engine/source/compile options and loaded binary path/digest in both CI and CLI.",
+    "Qualify project-private CPython 3.15.2 and reproducible PyYAML wheel build with pinned build inputs; no silent Python 3.12 fallback.",
+    "Pin and review actual native compiler/headers and interpreter distribution inputs before any source build; stop on required OS/privileged changes.",
+    "Qualify newest hosted runner profile and update workflow/validator assumptions together without weakening trust checks.",
+    "Commit one full lockfile; prove multi-document graph visibility and exact version parity before any passing CI/runtime claim.",
+    "Qualify the bounded latest-pinned Claude CLI trial using authorized subscription authentication and controlled discovery; record output/model/cancellation without enabling real worker orchestration."
+  ],
+  "codeql_bundle": {
+    "version": "2.27.3",
+    "url": "https://github.com/github/codeql-action/releases/download/codeql-bundle-v2.27.3/codeql-bundle-linux64.tar.zst",
+    "sha256": "5e7607e1b721728955e31f5402d460ad227cbd2ffed0d4cc610116755796150e",
+    "source": "https://github.com/github/codeql-action/releases/tag/codeql-bundle-v2.27.3"
+  },
+  "early_claude_probe": {
+    "package": "@anthropic-ai/claude-code",
+    "version": "2.1.312",
+    "source": "https://registry.npmjs.org/@anthropic-ai/claude-code/2.1.312",
+    "tarball": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.312.tgz",
+    "integrity": "sha512-/gx8byG8VOm4YoNuT5tal/Ov5Z5oydJzZkmHCJcBFLbNGGpyYDbKA/CNdB+iIKwcLQC8pVwBoj6Dt7H3L2J5bw==",
+    "declared_license": "SEE LICENSE IN README.md",
+    "observed_existing_installation": "2.1.302",
+    "status": "latest metadata checked; project-private setup and bounded live qualification require milestone approval",
+    "limits": {
+      "runs": 2,
+      "simultaneous_runs": 1,
+      "agentic_turns_per_run": 3,
+      "wall_seconds_per_run": 180,
+      "model_accessible_tools": 0,
+      "delegation": 0
+    },
+    "authentication": "existing authorized operator subscription; no copied credentials, API billing, paid extra usage or change to existing sessions/settings",
+    "model": "resolve and record an eligible exact model ID before invocation; no silent fallback",
+    "advisory_review": {
+      "service": "https://api.osv.dev/v1/query",
+      "date": "2026-10-30",
+      "returned_vulnerability_records": 0,
+      "scope": "this exact CLI npm version only; not source/binary safety or full dependency qualification"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "agentic-software-factory-workspace",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": "26.13.0",
+    "pnpm": "12.16.1"
+  },
+  "scripts": {
+    "qualify:contracts": "tsc -p tsconfig.qualification.json && node dist/qualification/contract.js",
+    "build": "tsc -b",
+    "test:core": "vitest run",
+    "check:versions": "python3 scripts/check_toolchain.py",
+    "typecheck": "tsc -b && tsc -p tsconfig.tests.json",
+    "lint": "biome check",
+    "test:acceptance": "node evals/core/run.mjs",
+    "test:controls": "python3 scripts/check_mutations.py"
+  },
+  "dependencies": {
+    "typebox": "catalog:",
+    "ajv": "catalog:",
+    "better-sqlite3": "catalog:"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@types/better-sqlite3": "catalog:",
+    "@types/node": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "fast-check": "catalog:",
+    "node-gyp": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "yaml": "catalog:",
+    "@asf/protocol": "workspace:*",
+    "@asf/core": "workspace:*",
+    "@asf/store-sqlite": "workspace:*"
+  }
+}

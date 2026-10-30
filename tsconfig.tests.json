@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": { "composite": false, "noEmit": true, "declaration": false },
+  "include": ["tests/core/**/*.ts", "vitest.config.ts"],
+  "references": [{ "path": "packages/protocol" }, { "path": "packages/core" }, { "path": "packages/store-sqlite" }]
+}
