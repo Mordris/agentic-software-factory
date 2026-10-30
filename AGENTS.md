@@ -4,7 +4,7 @@ Read README.md, docs/CHARTER.md, and the approved milestone before making change
 
 ## Current stage
 
-Phase 0: repository foundation and public pre-alpha design. Foundation CI, policies, templates, licensed icon assets, and public documentation are authorized; runtime implementation still requires a bounded milestone. The plan is a proposal, not evidence that the engine or controls already exist. Do not start agent workers, install dependencies, launch services, or begin a target-repository pilot merely because this repository exists.
+Phase 1 local implementation was approved by the operator on 30 October 2026 under the [bounded core milestone](docs/milestones/PHASE_1_CORE.md), including its two-run no-tools Claude qualification. After a CLI release changed, the operator explicitly approved two additional bounded runs on 30 October; both completed on 2.1.314. All four authorized runs are consumed. The approved envelope permits private dependency setup, implementation, and bounded checks. It does not authorize publication, the web milestone, full live worker orchestration, services, or a real OSS pilot. The local fixture core is qualified within its recorded limits; hosted core CI and later product milestones remain unqualified. Distinguish implemented behavior from qualified results and unfinished requirements. Do not run more live trials after the recorded original and renewed budgets are consumed.
 
 ## Authority
 

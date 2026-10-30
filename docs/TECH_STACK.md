@@ -61,3 +61,10 @@ Pin supported compatible releases and record the Node runtime, lockfile, SQLite 
 - [OpenTelemetry JavaScript](https://opentelemetry.io/docs/languages/js/), [Vitest](https://vitest.dev/guide/), [fast-check](https://fast-check.dev/docs/introduction/), [Playwright](https://playwright.dev/docs/intro), [Storybook](https://storybook.js.org/docs), and [pnpm workspaces](https://pnpm.io/workspaces).
 
 Claude runtime/authentication research and its remaining qualification requirements are recorded in [PLATFORM_RESEARCH.md](PLATFORM_RESEARCH.md). Remote topology and protocol semantics are specified in [DASHBOARD.md](DASHBOARD.md).
+
+
+## Phase 1 implementation decision — 30 October 2026
+
+The simulated local core uses exact pins in `toolchain.json` and the workspace catalog. SQLite 3.54.1 is compiled explicitly with better-sqlite3 13.0.3. The ledger uses prepared SQL and reviewed transactional migrations. Drizzle Kit was omitted because its resolved esbuild dependency had a returned advisory; the thin ORM wrapper was then removed because Drizzle ORM declarations failed strict TypeScript 7 checking. No incompatible override or skipLibCheck waiver is used.
+
+Node 26.13.0, Python 3.15.2, pnpm 12.16.1 and TypeScript 7.0.2 are the selected Phase 1 pins. Python's PyYAML wheel is built twice with reviewed inputs and a canonical expected hash. These are current implementation choices, superseding earlier core-stack proposals above. The web stack remains a future milestone.

@@ -21,7 +21,7 @@
 A generic, agentic software factory being built around **one operator-facing Headquarters**. Specialized labs will coordinate research, design, implementation, independent verification, and delivery preparation. OSS contributions are the first mode; the core is designed for software work beyond OSS.
 
 > [!WARNING]
-> **Public pre-alpha.** Repository policies and foundation CI exist. The factory runtime, dashboard, worker isolation, and approval enforcement are **not implemented or qualified**. There is no supported installation or unattended execution mode. Do not provide production credentials or workloads.
+> **Public pre-alpha.** A local simulated core is implemented and qualified within its recorded fixture scope. The dashboard, live worker adapter, process isolation and remote execution remain **unimplemented or unqualified**. There is no supported installation or unattended execution mode. Do not provide production credentials or workloads.
 
 ## Work you can follow. Authority you can inspect.
 
@@ -65,12 +65,12 @@ See the [architecture](docs/ARCHITECTURE.md), [verification requirements](docs/V
   <source media="(prefers-color-scheme: dark) and (max-width: 700px)" srcset="docs/assets/github/roadmap-mobile-dark.svg">
   <source media="(max-width: 700px)" srcset="docs/assets/github/roadmap-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/github/roadmap-dark.svg">
-  <img src="docs/assets/github/roadmap-light.svg" width="100%" alt="Present: repository foundation and CI. Planned: durable core and concurrent missions; visual Headquarters and reconnect; Claude adapter and execution qualification; a qualified preview with release gates.">
+  <img src="docs/assets/github/roadmap-light.svg" width="100%" alt="Present: repository foundation and local simulated durable core. Planned: visual Headquarters and reconnect; full Claude adapter and execution qualification; a qualified preview with release gates.">
 </picture>
 
-**Today:** architecture proposals, repository policies, templates, licensed assets, and foundation CI. **Still ahead:** the coordinator, web application, runtime adapter, isolated execution, and supported releases. Each milestone has [measurable exit criteria](docs/IMPLEMENTATION_PLAN.md).
+**Today:** repository foundation plus an experimental TypeScript coordinator, transactional SQLite ledger, scoped approvals, bounded concurrent scheduling, evidence gates and a foreground fixture CLI. A real process restart demonstration is available locally. **Still ahead:** hosted core CI qualification, the web application, live runtime adapter, isolated execution and supported releases. Each milestone has [measurable exit criteria](docs/IMPLEMENTATION_PLAN.md).
 
-Foundation CI checks source/configuration, tooling regressions, workflow security, secrets, and current Python/Actions code. A green foundation check does not establish runtime safety, agent correctness, or production readiness. [CI scope →](docs/CI.md)
+The proposed CI extension adds core quality, core qualification and full dependency review to foundation checks. Hosted execution of this extension is pending publication approval. Foundation checks cover source/configuration, tooling regressions, workflow security, secrets and static analysis. A green foundation check does not establish runtime safety, agent correctness, or production readiness. [CI scope →](docs/CI.md)
 
 ## The first runtime, deliberately scoped
 

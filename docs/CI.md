@@ -2,7 +2,7 @@
 
 The initial public foundation at `b9aafe2f5f0e43e6fad46071721d48ef4abcdaf6` passed [Repository CI](https://github.com/Mordris/agentic-software-factory/actions/runs/40929419275) and [CodeQL](https://github.com/Mordris/agentic-software-factory/actions/runs/40929419212). Its uploaded analyses reported zero findings; the main/tag rulesets were applied and read back. Every later revision must pass its own checks. This qualifies the repository foundation, not the factory runtime.
 
-## Current pipeline
+## Foundation and staged core pipeline
 
 | Check | Scope |
 | --- | --- |
@@ -10,18 +10,18 @@ The initial public foundation at `b9aafe2f5f0e43e6fad46071721d48ef4abcdaf6` pass
 | Tooling regressions | Invalid titles, duplicate/aliased YAML, escaping/missing paths, workflow privilege/injection regressions, checksum and archive extraction boundaries. |
 | Workflow audit | actionlint validates Actions syntax/expressions; offline pedantic zizmor inspects workflow security. |
 | Secret audit | Gitleaks scans all history available to the checked-out public source and redacts findings. |
-| CodeQL | Static analysis of current Python tooling and GitHub Actions. No target-repository code or build is executed. |
+| CodeQL | Static analysis of Python tooling, GitHub Actions and JavaScript/TypeScript in the staged core workflow. No target-repository code or build is executed. |
 | CI gate | Runs after mandatory jobs and succeeds only when every result is `success`; failure, cancellation, and skipping do not pass. |
 
-PRs, pushes to `main`, manual requests, and bounded weekly schedules trigger checks. Required jobs have no path filters or success fallbacks. Configure protections using actual observed `CI gate`, `Analyze (actions)`, and `Analyze (python)` contexts, verified against GitHub's structured run/check results.
+PRs, pushes to `main`, manual requests, and bounded weekly schedules trigger checks. Required jobs have no path filters or success fallbacks. Configure protections using actual observed `CI gate`, `Analyze (actions)`, `Analyze (python)` and `Analyze (javascript-typescript)` contexts, verified against GitHub's structured run/check results.
 
-This pipeline does not establish factory approval enforcement, sandbox isolation, model quality, remote recovery, E2E application behavior, or release artifact integrity. Those features have no implementation yet.
+This pipeline does not establish factory approval enforcement, sandbox isolation, model quality, remote recovery, E2E application behavior, or release artifact integrity. The simulated core has local evidence; hosted core qualification and live execution boundaries remain unverified.
 
 ## Supply chain and credentials
 
 - Third-party Actions use full commit SHAs, resolved from their official repositories and recorded in [action-pins.json](../.github/action-pins.json). Pinning identifies code; it is not proof that upstream code is safe.
 - Audit CLI versions, official release URLs, and SHA-256 digests are in [ci-tools.json](../.github/ci-tools.json). The runner verifies bytes before reading the one regular executable; it never extracts upstream paths or links. Tools run in a temporary directory and are not globally installed.
-- CPython 3.12 uses hash-pinned PyYAML wheels. GitHub-hosted runner images and Python patch versions can change; record observed versions in actual runs rather than claiming a hermetic build.
+- The staged pipeline selects exact CPython 3.15.2 through .python-version and reproducibly builds PyYAML 6.0.3 against a canonical wheel digest. The explicit Ubuntu 26.04 hosted label is checked independently of actionlint's stale built-in inventory. Hosted image/compiler identities still need execution evidence; record observed versions in actual runs rather than claiming a hermetic build.
 - Default token permissions are empty. Read-only jobs receive only `contents: read`; CodeQL additionally receives `security-events: write` to upload static analysis. Checkout does not persist credentials. No project secret or publishing token is used.
 - Do not run untrusted PR code on self-hosted runners, use privileged indirect PR triggers, interpolate PR text into shell scripts, share writable caches with privileged jobs, or consume untrusted artifacts in a publishing job.
 - No caches, auto-merge, tag-triggered publishing, or deployment credentials are present. Dependency PR automation is disabled in the staged Dependabot configuration to preserve the operator's per-PR approval boundary. Alerts and read-only analysis are separate settings.
@@ -47,7 +47,19 @@ python3 scripts/ci_tools.py gitleaks git --redact=100 --no-banner --exit-code=1 
 
 These last commands download and execute reviewed tool binaries. They require explicit authorization under the current operator's installation/workload constraints. No check may report success merely because its tool was unavailable.
 
-## Add gates with executable features
+## Core gates with executable features
+
+CodeQL receives only a locally downloaded tarball whose canonical SHA-256 is verified before initialization. The downloader's checksum and byte-budget adverse controls run in foundation tests; the full bundle is downloaded only in approved hosted CI.
+
+The staged core jobs are Core quality, Core qualification and Dependency review, implemented through scripts/ci_core.py. All five mandatory job results must succeed; foundation tests enumerate 3,125 combinations including absent results. The shared recipes explicitly install frozen pnpm dependencies with hooks disabled, build the exact SQLite engine, validate runtime/catalog/lock parity, check strict production/test types, enforce Biome formatting, and run actual core tests and the process restart demonstration. Full lockfile advisory/license review fails closed on missing graph or service results.
+
+These source changes have only local evidence. Hosted Ubuntu 26.04 compatibility, all new check contexts and ruleset updates require separate publication/admin approval and actual run readback. No live model, subscription credential or Claude trial runs in CI.
+
+The narrow actionlint filter covers only its unknown Ubuntu 26.04 diagnostic. GitHub's official image list was checked on 30 October 2026; the repository validator still rejects any different runner label, including self-hosted runners. No security audit finding is ignored.
+
+The selected Biome 2.6.4 release was newer than the standard pnpm minimum release age at entry. Its exact packages alone are listed as age exceptions in the workspace file; integrity/graph/license/advisory checks remain active. This exception does not allow other new packages or lifecycle scripts.
+
+## Later gates
 
 The core milestone adds strict TypeScript checks, lint/format, invariant/property tests, database migrations, recovery and fault injection. The web milestone adds component states, accessibility, Playwright journeys, visual regressions, graph-size/update-rate budgets, and real two-machine reconnect tests. The adapter milestone adds actual runtime/model inventory, permission waits, isolated execution, cancellation, and auth/transport failures.
 

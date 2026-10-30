@@ -1,6 +1,6 @@
 # Phase 1 acceptance matrix
 
-Status: required future checks for [the Phase 1 core brief](PHASE_1_CORE.md), 30 October 2026. No row is marked passed by this plan. All fixtures are synthetic and stay inside owned temporary/state directories.
+Status: acceptance definitions for [the Phase 1 core brief](PHASE_1_CORE.md), 30 October 2026. Executed local results and limits are recorded in [the qualification report](PHASE_1_QUALIFICATION.md); this matrix itself is not an execution receipt. All fixtures are synthetic and stay inside owned temporary/state directories.
 
 ## Required observable behavior
 

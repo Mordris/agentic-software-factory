@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-10-30",
+  "node": {
+    "version": "26.13.0",
+    "url": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-linux-x64.tar.xz",
+    "sha256": "d28a96af6c38596f6d9d97c0ee531c13d238d757742387d1928de822d959e997",
+    "headers_url": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-headers.tar.xz",
+    "headers_sha256": "519e269c3e78bf513fdf53d2ab114b763173a7c9424bd477d4e182d782ea366f"
+  },
+  "python": {
+    "version": "3.15.2",
+    "artifacts": [
+      {
+        "name": "python-3.15.2-linux-24.04-x64.tar.gz",
+        "url": "https://github.com/actions/python-versions/releases/download/3.15.2-40340363276/python-3.15.2-linux-24.04-x64.tar.gz",
+        "sha256": "a945ca657bf4efeac7483c0c82381448d3b651a8d0e49be421c71fd53085cd01"
+      },
+      {
+        "name": "python-3.15.2-linux-26.04-x64.tar.gz",
+        "url": "https://github.com/actions/python-versions/releases/download/3.15.2-40340363276/python-3.15.2-linux-26.04-x64.tar.gz",
+        "sha256": "2c5bc8461e5c9537914c7b6b2fb212c733f2a6f3e20045763538e5d9ac99f43e"
+      }
+    ],
+    "pyyaml_wheel_sha256": "f48b95afd9301264402f499353f08d78c48b4d46995a213f674cf688c98c925e",
+    "source_date_epoch": "1700000000"
+  },
+  "pnpm": {
+    "version": "12.16.1",
+    "url": "https://registry.npmjs.org/pnpm/-/pnpm-12.16.1.tgz",
+    "integrity": "sha512-CR0d7nknV1Zhsl2rPCrjHK/BxU1rce1qZgDPDByxBDSkR+rhQBXxsj4ua+3u1535SpMuIWTSgyKA3OP7MvZW0Q==",
+    "native": {
+      "version": "12.16.1",
+      "package": "@pnpm/exe.linux-x64",
+      "url": "https://registry.npmjs.org/@pnpm/exe.linux-x64/-/exe.linux-x64-12.16.1.tgz",
+      "integrity": "sha512-RK//8ZLcXGW8A2k8bQOXZDBN1Qu92zN4dYnG1bzj1zoQ1fkZ6jNzZ1AvXtsfGVma795CJtvoaF5bLXf4l/FIUw==",
+      "metadata": "https://registry.npmjs.org/@pnpm/exe.linux-x64/12.16.1"
+    }
+  },
+  "sqlite": {
+    "version": "3.54.1",
+    "release": "https://sqlite.org/releaselog/3_54_1.html",
+    "archive": "https://sqlite.org/2026/sqlite-amalgamation-3540100.zip",
+    "bytes": 2990966,
+    "sha3_256": "92281c86e2957f9b9305890f9ac04204caa7b677cc868dc326d942689df28e30",
+    "driver_bundled_version": "3.53.4",
+    "status": "canonical latest-source build qualified locally with actual engine/source/options and prepared SQL; hosted build remains pending",
+    "source_id": "2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+    "definitions": {
+      "SQLITE_DQS": 0,
+      "SQLITE_DEFAULT_FOREIGN_KEYS": 1,
+      "SQLITE_THREADSAFE": 2,
+      "SQLITE_USE_URI": 0
+    }
+  },
+  "python_packages": [
+    {
+      "package": "PyYAML",
+      "version": "6.0.3",
+      "source": "https://pypi.org/pypi/PyYAML/6.0.3/json",
+      "declared_license": "MIT",
+      "artifacts": [
+        {
+          "file": "pyyaml-6.0.3.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz",
+          "sha256": "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f",
+          "type": "sdist"
+        }
+      ]
+    },
+    {
+      "package": "pip",
+      "version": "26.2.2",
+      "source": "https://pypi.org/pypi/pip/26.2.2/json",
+      "declared_license": "MIT",
+      "artifacts": [
+        {
+          "file": "pip-26.2.2-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/3f/06/3e4420302363fbb71be3c7f35ce042f54bfca330e3e66b3a2e3c4cca579f/pip-26.2.2-py3-none-any.whl",
+          "sha256": "fd7f4dfa8190e014013b9f08f3e973f4e4c26ffd179a204895533a7254813a70",
+          "type": "bdist_wheel"
+        },
+        {
+          "file": "pip-26.2.2.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz",
+          "sha256": "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f",
+          "type": "sdist"
+        }
+      ],
+      "bootstrap_wheel": {
+        "file": "pip-26.2.2-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/3f/06/3e4420302363fbb71be3c7f35ce042f54bfca330e3e66b3a2e3c4cca579f/pip-26.2.2-py3-none-any.whl",
+        "sha256": "fd7f4dfa8190e014013b9f08f3e973f4e4c26ffd179a204895533a7254813a70"
+      }
+    },
+    {
+      "package": "setuptools",
+      "version": "84.2.1",
+      "source": "https://pypi.org/pypi/setuptools/84.2.1/json",
+      "declared_license": "MIT",
+      "artifacts": [
+        {
+          "file": "setuptools-84.2.1-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/ef/55/6dc6d6bb953bdfc52519a0059592c52b6e3b8ad51cf8256dffceb55b0610/setuptools-84.2.1-py3-none-any.whl",
+          "sha256": "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2",
+          "type": "bdist_wheel"
+        },
+        {
+          "file": "setuptools-84.2.1.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz",
+          "sha256": "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc",
+          "type": "sdist"
+        }
+      ],
+      "bootstrap_wheel": {
+        "file": "setuptools-84.2.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/ef/55/6dc6d6bb953bdfc52519a0059592c52b6e3b8ad51cf8256dffceb55b0610/setuptools-84.2.1-py3-none-any.whl",
+        "sha256": "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2"
+      }
+    },
+    {
+      "package": "wheel",
+      "version": "0.48.0",
+      "source": "https://pypi.org/pypi/wheel/0.48.0/json",
+      "declared_license": "MIT",
+      "artifacts": [
+        {
+          "file": "wheel-0.48.0-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/2e/29/69cfbb602cd91690c55d38ba9fe53e6a7e76a6fa647bf38f19c138d25449/wheel-0.48.0-py3-none-any.whl",
+          "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab",
+          "type": "bdist_wheel"
+        },
+        {
+          "file": "wheel-0.48.0.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/d0/20/50ed6bdf27dec98b568a8ae25dc599f35baa3d9709f9e83fd1edb56b9a90/wheel-0.48.0.tar.gz",
+          "sha256": "94800765601e9171bf5d58d066e640662842bcedcbab982b2c90787a2c987322",
+          "type": "sdist"
+        }
+      ],
+      "bootstrap_wheel": {
+        "file": "wheel-0.48.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/2e/29/69cfbb602cd91690c55d38ba9fe53e6a7e76a6fa647bf38f19c138d25449/wheel-0.48.0-py3-none-any.whl",
+        "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+      }
+    },
+    {
+      "package": "Cython",
+      "version": "3.3.0",
+      "source": "https://pypi.org/pypi/Cython/3.3.0/json",
+      "declared_license": "Apache-2.0",
+      "artifacts": [
+        {
+          "file": "cython-3.3.0-py3-none-any.whl",
+          "url": "https://files.pythonhosted.org/packages/bf/77/67b0b24e45073a699610e50f00c18474ff9b09ea29ecc95083bdf5e60acd/cython-3.3.0-py3-none-any.whl",
+          "sha256": "9b24b5c8cd536946b62086fcafee6d5509d3f549f72d553d2336af87ffbe0da1",
+          "type": "bdist_wheel"
+        },
+        {
+          "file": "cython-3.3.0.tar.gz",
+          "url": "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz",
+          "sha256": "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8",
+          "type": "sdist"
+        }
+      ],
+      "bootstrap_wheel": {
+        "file": "cython-3.3.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/bf/77/67b0b24e45073a699610e50f00c18474ff9b09ea29ecc95083bdf5e60acd/cython-3.3.0-py3-none-any.whl",
+        "sha256": "9b24b5c8cd536946b62086fcafee6d5509d3f549f72d553d2336af87ffbe0da1"
+      }
+    },
+    {
+      "package": "packaging",
+      "version": "26.3",
+      "source": "https://pypi.org/pypi/packaging/26.3/json",
+      "declared_license": "Apache-2.0 OR BSD-2-Clause",
+      "bootstrap_wheel": {
+        "file": "packaging-26.3-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+        "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+      }
+    }
+  ],
+  "claude_probe": {
+    "package": "@anthropic-ai/claude-code",
+    "version": "2.1.314",
+    "source": "https://registry.npmjs.org/@anthropic-ai/claude-code/2.1.314",
+    "tarball": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.314.tgz",
+    "integrity": "sha512-iD58PXZvNCykRm3ZRiV/zJOsejXH/FtLZFtsFqUHxFxBsthOyb+0MINeJ8EsNbSG8ECTsfhzPIZwl8x6NIRkSg==",
+    "declared_license": "SEE LICENSE IN README.md",
+    "observed_existing_installation": "2.1.302",
+    "status": "fixed-input no-tools result and owned cancellation qualified locally on 2026-10-30 for this exact runtime/model/recipe; all four authorized runs consumed; not a live-worker qualification",
+    "limits": {
+      "runs": 2,
+      "simultaneous_runs": 1,
+      "agentic_turns_per_run": 3,
+      "wall_seconds_per_run": 180,
+      "model_accessible_tools": 0,
+      "delegation": 0
+    },
+    "authentication": "existing authorized operator subscription; no copied credentials, API billing, paid extra usage or change to existing sessions/settings",
+    "model": "claude-haiku-5-5",
+    "advisory_review": {
+      "service": "https://api.osv.dev/v1/query",
+      "date": "2026-10-30",
+      "returned_vulnerability_records": 0,
+      "scope": "exact Claude Code and linux-x64 native npm packages at 2.1.314; not source/binary safety or full live-runtime qualification",
+      "packages": 2
+    },
+    "native": {
+      "version": "2.1.314",
+      "package": "@anthropic-ai/claude-code-linux-x64",
+      "url": "https://registry.npmjs.org/@anthropic-ai/claude-code-linux-x64/-/claude-code-linux-x64-2.1.314.tgz",
+      "integrity": "sha512-Yg0a5mpdkGClK0rgFMxbCWZW3wZtqgOhYjbISALqyL5tfADHhX9Ms6ExA0/effgSJ9MaWfHMPntryeOG6Mk6HQ==",
+      "metadata": "https://registry.npmjs.org/@anthropic-ai/claude-code-linux-x64/2.1.314",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "source": "https://registry.npmjs.org/@anthropic-ai/claude-code-linux-x64/2.1.314"
+    },
+    "previous_qualification": {
+      "version": "2.1.312",
+      "runs": 2,
+      "status": "fixed-input result and owned cancellation observed; historical exact recipe only"
+    },
+    "qualification": {
+      "version": "2.1.314",
+      "model": "claude-haiku-5-5",
+      "probe_sha256": "0a3b9e2159527d554ba3caf83cd70cc7d54e025ea76f2fa8b596879cfffcfeeb",
+      "runs": 2,
+      "tools": 0,
+      "result_validated": true,
+      "owned_cancellation_exit": 143,
+      "limits": "no tool, delegation, remote, sandbox, provider cancellation/billing or turn-limit exhaustion qualification"
+    }
+  },
+  "limits": {
+    "cpu_quota_percent": 200,
+    "memory_bytes": 4294967296,
+    "pids": 128,
+    "command_seconds": 900,
+    "cumulative_seconds": 3600,
+    "owned_disk_bytes": 4294967296,
+    "minimum_free_bytes": 10737418240
+  },
+  "ci": {
+    "runner": "ubuntu-26.04",
+    "qualification": "configured; exact hosted image/compiler must be observed after publication approval",
+    "codeql_bundle": {
+      "version": "2.27.3",
+      "url": "https://github.com/github/codeql-action/releases/download/codeql-bundle-v2.27.3/codeql-bundle-linux64.tar.zst",
+      "sha256": "5e7607e1b721728955e31f5402d460ad227cbd2ffed0d4cc610116755796150e",
+      "source": "https://github.com/github/codeql-action/releases/tag/codeql-bundle-v2.27.3",
+      "file": ".factory/codeql/bundle.tar.zst"
+    }
+  }
+}

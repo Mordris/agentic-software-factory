@@ -1,3 +1,3 @@
 @AGENTS.md
 
-This repository builds a Claude Code-first software factory. Its current deliverable is the phase-0 design proposal. Read docs/IMPLEMENTATION_PLAN.md before extending it. No plugin, worker, hook, mod, or workflow is enabled by this bootstrap.
+Read the approved Phase 1 milestone and its acceptance matrix. The simulated core is being qualified locally. Native plugins, live workers, remote execution and the web Headquarters require later milestones. Never repeat the consumed original and renewed live qualification budgets without new authorization.

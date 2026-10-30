@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2024",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": false,
+    "types": [
+      "node"
+    ],
+    "declaration": true,
+    "composite": true,
+    "sourceMap": true,
+    "noEmitOnError": true
+  }
+}

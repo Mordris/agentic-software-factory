@@ -1,0 +1,12 @@
+{
+  "name": "@asf/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@asf/core": "workspace:*",
+    "@asf/protocol": "workspace:*",
+    "@asf/store-sqlite": "workspace:*"
+  }
+}

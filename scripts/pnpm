@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
+"""Use only the explicitly bootstrapped, exact project package manager/runtime."""
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+root = Path(__file__).resolve().parents[1]
+lock = json.loads((root / "toolchain.json").read_text())
+node = root / ".factory/tooling" / ("node-" + lock["node"]["version"]) / "bin/node"
+pnpm = root / ".factory/tooling" / ("pnpm-native-" + lock["pnpm"]["version"]) / "pnpm"
+for executable, expected in [(node, "v" + lock["node"]["version"]), (pnpm, lock["pnpm"]["version"])]:
+    if not executable.is_file() or subprocess.check_output([str(executable), "--version"], text=True).strip() != expected:
+        raise SystemExit("Exact private toolchain missing/mismatched; run the documented explicit bootstrap")
+env = os.environ.copy()
+env["PATH"] = str(node.parent) + os.pathsep + env.get("PATH", "/usr/bin:/bin")
+python_bin = root / ".factory/tooling" / ("python-" + lock["python"]["version"]) / "bin"
+if python_bin.is_dir():
+    env["PATH"] = str(node.parent) + os.pathsep + str(python_bin) + os.pathsep + env["PATH"]
+    env["LD_LIBRARY_PATH"] = str(python_bin.parent / "lib")
+os.execve(pnpm, [str(pnpm), *sys.argv[1:]], env)

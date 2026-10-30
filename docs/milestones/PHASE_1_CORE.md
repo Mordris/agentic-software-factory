@@ -1,6 +1,6 @@
 # Phase 1 — Durable core with simulated workers
 
-Status: implementation brief for operator review, 30 October 2026. Preparing this brief is authorized; dependency installation and runtime implementation await approval of this bounded milestone. Nothing below is an executed qualification result.
+Status: bounded local implementation and the two-run live qualification were approved by the operator on 30 October 2026. Local implementation and fixture qualification are complete; see PHASE_1_QUALIFICATION.md for executed results and limits. Requirements below do not imply broader production qualification. Publication remains separately gated.
 
 ## Outcome and acceptance demonstration
 
@@ -10,7 +10,7 @@ Mission A exercises Research, Production, failed independent fixture verificatio
 
 The [acceptance matrix](PHASE_1_ACCEPTANCE.md) defines the required observations, failure controls, and evidence. A green demonstration alone does not replace the boundary and recovery tests.
 
-Add an early, separately bounded real Claude Code qualification to reduce adapter risk before Phase 2. Core failure tests remain deterministic; the live trial checks the actual selected runtime, subscription authentication, observed model, structured event/result handling, and owned-process cancellation. The live trial is proposed here for approval, not already executed.
+Add an early, separately bounded real Claude Code qualification to reduce adapter risk before Phase 2. Core failure tests remain deterministic; the live trial checks the actual selected runtime, subscription authentication, observed model, structured event/result handling, and owned-process cancellation. The two approved live trials were executed and their budget is consumed; see the qualification record.
 
 ## Scope and authority
 
@@ -45,7 +45,7 @@ The [candidate inventory](phase-1-dependencies.json) records metadata checked on
 | Node | 26.13.0 | Same exact release in local setup, CI, checks, and CLI; record binary digest. |
 | Package manager / language | pnpm 12.16.1 / TypeScript 7.0.2 | Verify native compiler/platform packages and all lockfile documents. |
 | JSON boundary | TypeBox `typebox` 1.4.3 / Ajv 8.20.0 | Export JSON-only schemas; test selected dialect, static types, and strict runtime rejection together. |
-| Store / migrations | Drizzle ORM 0.45.4 / Drizzle Kit 0.31.11 | Review generated SQL and exercise actual migrations and transactions. |
+| Store / migrations | better-sqlite3 prepared SQL / explicit reviewed SQL migrations | The thin Drizzle ORM wrapper was removed after its declarations failed the strict TypeScript 7 build; no library checks were disabled. The optional latest Drizzle Kit generator was omitted during entry review: its esbuild 0.18.20 dependency has GHSA-67mh-4wv8-2f99. No advisory waiver or incompatible override is used. |
 | SQLite | better-sqlite3 13.0.3; target engine 3.54.1 | The driver bundles 3.53.4. Qualify a controlled build against pinned official 3.54.1 sources before adopting it. |
 | Tests / formatting | Vitest and coverage-v8 5.0.5, Vite 8.3.5, fast-check 4.10.2, Biome 2.6.4 | Run production ESM output and compatible type/property/coverage checks under the selected Node. |
 | Foundation tooling | CPython 3.15.2, pip 26.2.2, PyYAML 6.0.3 | No CPython 3.15 wheel is listed for PyYAML. Qualify an isolated, reproducible wheel build with pinned build dependencies. |
@@ -137,7 +137,7 @@ Every required current check must be `passed` for the matching inputs. Failed, m
 | Artifact or fixture escapes its root | Owned paths, safe resolution/write policy, link and tamper tests | No arbitrary target-repository execution or sandbox certification. |
 | Dependency or native build changes versions/authority | Exact shared pins, reviewed sources/scripts, explicit build, full lockfile advisory/license inventory | Metadata and advisory absence do not prove safe code. |
 
-## Resource envelope proposed for approval
+## Approved resource envelope
 
 | Resource | Ceiling / policy |
 | --- | --- |
@@ -178,4 +178,4 @@ Checked: official [Node release index](https://nodejs.org/dist/index.json) and [
 
 The live-probe proposal additionally checks the installed CLI's version/help, [official programmatic CLI guidance](https://code.claude.com/docs/en/headless), [CLI reference](https://code.claude.com/docs/en/cli-reference), and [version-specific Claude Code registry metadata](https://registry.npmjs.org/@anthropic-ai/claude-code/2.1.312). Documentation and help are not evidence of effective local authentication, limits, or permission enforcement.
 
-Registry metadata, declared licenses, integrity strings, and direct-package advisory responses were inspected. No candidate package or runtime was installed, no native build or application check was executed, and no resolved transitive graph exists yet. These remain implementation entry/exit requirements. The existing foundation environment has different versions and does not prove the proposed shared toolchain.
+Registry metadata, declared licenses, integrity strings, and direct-package advisory responses were inspected. This paragraph described the planning snapshot. Implementation now uses toolchain.json, the workspace catalog and both lockfile documents. Actual results and remaining gaps are tracked in PHASE_1_QUALIFICATION.md; the candidate inventory remains dated research.
