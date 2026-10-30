@@ -7,7 +7,7 @@
 
 # Contributing
 
-The project is in its repository-foundation stage. Runtime and dashboard work follow [the bounded milestones](docs/IMPLEMENTATION_PLAN.md); a design is not an implemented control.
+The project has an experimental local fixture core. Runtime and dashboard work follow [the bounded milestones](docs/IMPLEMENTATION_PLAN.md); a design is not an implemented control. See the [qualification record](docs/milestones/PHASE_1_QUALIFICATION.md) for executed results and current limits.
 
 ## Scope the work
 
@@ -32,14 +32,16 @@ Apply an appropriate type label and relevant area/status labels from [the catalo
 
 ## Foundation checks
 
-Current tools use CPython 3.12 and PyYAML. CI installs hash-pinned wheels from [.github/requirements-ci.txt](.github/requirements-ci.txt). When that environment is available:
+The shared toolchain selects exact CPython 3.15.2 and PyYAML 6.0.3 through [toolchain.json](toolchain.json). The explicit Python qualification recipe builds a pure wheel from verified sources and pinned build dependencies in two independent trees, with a fixed epoch and permission mask. Its bytes must match the canonical hash shared with [.github/requirements-ci.txt](.github/requirements-ci.txt). The local wheel is not a published PyPI wheel.
+
+With the qualified environment available:
 
 ```sh
 python3 scripts/check_repository.py
 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
-These check repository policy, local document links, forms/configuration, workflow invariants, vendored assets, and tooling regressions. They do not run the planned application. CI additionally uses pinned actionlint, zizmor, and Gitleaks. See [CI.md](docs/CI.md).
+These check repository policy, local document links, forms/configuration, workflow invariants, vendored assets, and tooling regressions. The core has separate strict build, fixture, process recovery and dependency checks; see [the local core commands](docs/LOCAL_CORE.md). CI additionally uses pinned actionlint, zizmor, and Gitleaks. See [CI.md](docs/CI.md).
 
 Follow the operator's resource and installation constraints. Do not install tools or start services merely to satisfy this document. Record a blocked check when its environment is unavailable.
 

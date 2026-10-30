@@ -1,2 +1,2 @@
 # Built reproducibly by scripts/qualify_python.py; install only from its local wheel directory.
-PyYAML==6.0.3 --hash=sha256:f48b95afd9301264402f499353f08d78c48b4d46995a213f674cf688c98c925e
+PyYAML==6.0.3 --hash=sha256:3a8da6885ef7cf83eb4caa702c6f65f3a56d8920e393db4465d06d401a0cbf67

@@ -18,11 +18,29 @@ from check_toolchain import check_sources
 from review_dependencies import advisory_findings, locked_packages
 import run_bounded
 from codeql_bundle import verified_stream
+from qualify_python import fixed_umask
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class CoreBoundaries(unittest.TestCase):
+    def test_wheel_build_permissions_do_not_inherit_caller_umask(self):
+        import os
+        original = os.umask(0o002)
+        try:
+            for inherited in [0o002, 0o077]:
+                os.umask(inherited)
+                with tempfile.TemporaryDirectory() as directory:
+                    target = Path(directory) / 'generated-wheel-member'
+                    with fixed_umask(0o022): target.write_text('fixture')
+                    self.assertEqual(target.stat().st_mode & 0o777, 0o644)
+                observed = os.umask(inherited)
+                self.assertEqual(observed, inherited)
+            with self.assertRaises(RuntimeError):
+                with fixed_umask(0o022): raise RuntimeError('injected build failure')
+            self.assertEqual(os.umask(0o077), 0o077)
+        finally:
+            os.umask(original)
     def test_bundle_checksum_and_download_budget_fail_before_use(self):
         payload = b'owned synthetic bundle'
         expected = hashlib.sha256(payload).hexdigest()

@@ -22,8 +22,9 @@
         "sha256": "2c5bc8461e5c9537914c7b6b2fb212c733f2a6f3e20045763538e5d9ac99f43e"
       }
     ],
-    "pyyaml_wheel_sha256": "f48b95afd9301264402f499353f08d78c48b4d46995a213f674cf688c98c925e",
-    "source_date_epoch": "1700000000"
+    "pyyaml_wheel_sha256": "3a8da6885ef7cf83eb4caa702c6f65f3a56d8920e393db4465d06d401a0cbf67",
+    "source_date_epoch": "1700000000",
+    "build_umask": "0022"
   },
   "pnpm": {
     "version": "12.16.1",
